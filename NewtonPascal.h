@@ -1,17 +1,19 @@
 #ifndef _NewtonPascal_H_
 #define _NewtonPascal_H_
 
-struct SyntaxTreeNode{
+struct SyntaxTreeNode {
 	int type;
-	union value{
-    double DValue;
-    char* SValue;
-    int IValue;
-    float FValue;
-  }
+	union value {
+	    double DValue;
+	    char* SValue;
+	    int IValue;
+	    float FValue;
+  	}
 	//char text[48];
 	struct SyntaxTreeNode* sNodeNext; // 指向同一层的节点
 	struct SyntaxTreeNode* sNodeSon;  // 指向子节点
+
+	char* pcode;
 };
 
 void ProcessTree(struct SyntaxTreeNode* sNode);
