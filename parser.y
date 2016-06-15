@@ -4,13 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define YYSTYPE SyntaxTree
+
 %}
 
-
-
-%union {
-	struct SyntaxTreeNode* sNode;
-}
 
 //terminal symbol
 %token NAME
@@ -263,7 +260,7 @@ routine_part function_decl {}
 | routine_part procedure_decl {}
 | function_decl {}
 | procedure_decl {}
-| MULL {}
+| NULL {}
 
 function_decl:
 function_head SEMI sub_routine SEMI {}

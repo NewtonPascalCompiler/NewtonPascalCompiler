@@ -1,3 +1,5 @@
+%option case-insensitive
+
 %{
 #include "global.h"
 #include "util.h"

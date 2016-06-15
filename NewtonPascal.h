@@ -8,13 +8,15 @@ struct SyntaxTreeNode {
 	    char* SValue;
 	    int IValue;
 	    float FValue;
-  	}
+  	};
 	//char text[48];
 	struct SyntaxTreeNode* sNodeNext; // 指向同一层的节点
 	struct SyntaxTreeNode* sNodeSon;  // 指向子节点
 
 	char* pcode;
 };
+
+typedef SyntaxTreeNode* SyntaxTree;
 
 void ProcessTree(struct SyntaxTreeNode* sNode);
 struct SyntaxTreeNode* MallocNewNode();
