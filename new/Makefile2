@@ -1,0 +1,16 @@
+#a.out : tiny.l tiny.y global.h scan.h parse.h util.c main.c 
+#	flex tiny.l
+#	yacc -d tiny.y
+#	gcc util.c lex.yy.c y.tab.c main.c -lfl -o a.out
+complier: main.o util.o lex.yy.o symtab.o CodeGenerater.o
+	cc main.o util.o lex.yy.o symtab.o CodeGenerater.o -LS -o compiler
+util.o: util.c util.h global.h
+	cc -c util.c
+lex.yy.o: lex.yy.c util.h global.h
+	cc -c lex.yy.c
+main.o: main.c global.h util.h
+	cc -c main.c
+CodeGenerater.o: CodeGenerater.c CodeGenerater.h global.h symtab.h
+	cc -c CodeGenerater.c
+symtab.o: symtab.c symtab.h util.h global.h
+	cc -c symtab.c

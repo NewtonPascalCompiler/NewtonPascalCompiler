@@ -56,19 +56,70 @@ input_real:
    fld dword ptr tmp
    ret
 
-HelloWorld:
+
+
+
+
+
+
+Hello:
 push ebp
 mov ebp, esp
 mov esi, ss:[ebp+0]
 
-mov edi, -2130969175
-mov eax, ss:[esi+edi] 
+mov eax, 5
 push eax
 call output
 pop  eax
 
 
 add esp, 0
+pop ebp
+ret
+
+
+
+Double2:
+push ebp
+mov ebp, esp
+mov esi, ss:[ebp+0]
+
+mov edi, -16
+mov eax, ss:[esi+edi] 
+push eax
+mov edi, 8
+mov eax, ss:[ebp+edi] 
+push eax
+mov eax, 2
+mov ebx, eax
+pop eax
+xor edx, edx
+mul ebx
+mov ebx, eax
+pop eax
+mov edi, -16
+mov eax, ebx
+mov ss:[esi+edi], eax
+
+add esp, 0
+pop ebp
+ret
+
+HelloWorld:
+push ebp
+mov ebp, esp
+mov esi, ss:[ebp+0]
+sub esp, 12		;Allocate Varable space
+sub esp, 8		;Allocate Varable space
+
+mov edi, -16
+mov eax, ss:[ebp+edi] 
+push eax
+call output
+pop  eax
+
+
+add esp, 20
 pop ebp
 ret
 end    start

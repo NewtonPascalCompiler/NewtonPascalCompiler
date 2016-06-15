@@ -13,11 +13,14 @@ static int savedLineNo;
 static TreeNode* savedTree;
 static int savedNum;
 static int level=0;
+/*
 static int yylex(){
     return getToken();
 }
-int yyerror(char* message);
+*/
+void yyerror(const char* s, ...);
 %}
+
 %token TOKEN_PROGRAM TOKEN_FUNCTION TOKEN_PROCEDURE TOKEN_CONST TOKEN_TYPE TOKEN_VAR
 %token TOKEN_IF TOKEN_THEN TOKEN_ELSE TOKEN_REPEAT TOKEN_UNTIL TOKEN_WHILE TOKEN_DO TOKEN_CASE TOKEN_TO TOKEN_DOWNTO TOKEN_FOR
 %token TOKEN_EQUAL TOKEN_UNEQUAL TOKEN_GE TOKEN_GT TOKEN_LE TOKEN_LT TOKEN_ASSIGN TOKEN_PLUS TOKEN_MINUS TOKEN_MUL TOKEN_DIV TOKEN_OR TOKEN_AND TOKEN_NOT TOKEN_MOD TOKEN_READ TOKEN_WRITE TOKEN_WRITELN
@@ -83,8 +86,8 @@ function_decl       :   function_head TOKEN_SEMI routine TOKEN_SEMI
 			
                             $$->child[0]=$1->child[1];
                             $$->child[1]=$1->child[0];
-			    $$ ->child[2]=$3;
-			    free($1);
+			    			$$->child[2]=$3;
+			    			free($1);
                         }
                     ;
 function_head       :   TOKEN_FUNCTION TOKEN_ID
@@ -135,7 +138,7 @@ procedure_decl      :   procedure_head TOKEN_SEMI routine TOKEN_SEMI
                             $$->attr.name=copyString( $1->attr.name);
                             $$->child[0]=NULL;
                             $$->child[1]=$1->child[0];
-			    $$ ->child[2]=$3;
+			    			$$->child[2]=$3;
                             free($1);
                         }
                     ;
@@ -607,7 +610,7 @@ factor              :   ID
                     ;
 %%
 
-int yyerror(char* s){
+void yyerror(const char* s, ...){
     
     va_list ap;
     va_start(ap, s);	
@@ -616,13 +619,11 @@ int yyerror(char* s){
     vfprintf(stderr, s, ap);
     fprintf(stderr, "\n");
     va_end(ap);
-
-    return 0;
 }
 
 
-TreeNode * parse(){
+TreeNode * parse()
+{
     yyparse();
     return savedTree;
-
 }

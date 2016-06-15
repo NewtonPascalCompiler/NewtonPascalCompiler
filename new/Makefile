@@ -1,7 +1,7 @@
 #a.out : tiny.l tiny.y global.h scan.h parse.h util.c main.c 
 #	flex tiny.l
 #	yacc -d tiny.y
-#	gcc util.c lex.yy.c y.tab.c main.c -lfl -o com.exe
+#	gcc util.c lex.yy.c y.tab.c main.c -lfl -o a.out
 complier: main.o util.o y.tab.o lex.yy.o symtab.o CodeGenerater.o
 	cc main.o util.o y.tab.o lex.yy.o symtab.o CodeGenerater.o -LS -o compiler
 util.o: util.c util.h global.h y.tab.h
