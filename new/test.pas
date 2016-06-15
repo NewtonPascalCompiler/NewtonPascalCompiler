@@ -1,11 +1,8 @@
-program Project1;
-var
-  f:array[0..100] of INTEGER;
-  i,j,k,l:INTEGER;
-  n,a:INTEGER;
-
-begin
-  read(n);
-  f[0]:=100;
-  writeln(f[n]);
-end.
+if()then 
+  writeln();
+else if( boolean_expression 2) then 
+   S2 (* Executes when the boolean expression 2 is true *)
+else if( boolean_expression 3) then 
+   S3 (* Executes when the boolean expression 3 is true *)
+else 
+   S4; ( * executes when the none of the above condition is true *)

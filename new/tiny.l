@@ -1,4 +1,4 @@
-%option case-insensitive
+%option yylineno case-insensitive
 
 %{
 #include "global.h"

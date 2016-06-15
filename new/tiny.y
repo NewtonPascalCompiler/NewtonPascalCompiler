@@ -4,6 +4,8 @@
 #include "util.h"
 #include "scan.h"
 #include "parse.h"
+#include <stdarg.h>
+
 #define YYSTYPE TreeNode *
 static char * savedName;
 static char * savedName1;
@@ -605,9 +607,16 @@ factor              :   ID
                     ;
 %%
 
-int yyerror(char* message){
-    fprintf(listing, "Syntax error at line %d: %s\n",lineno,message);
-   // printToken(yychar, tokenString);
+int yyerror(char* s){
+    
+    va_list ap;
+    va_start(ap, s);	
+    fprintf(stderr, "line %d: error near '%s': ", yylineno, yytext);
+    
+    vfprintf(stderr, s, ap);
+    fprintf(stderr, "\n");
+    va_end(ap);
+
     return 0;
 }
 
