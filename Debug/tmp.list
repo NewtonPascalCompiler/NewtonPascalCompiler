@@ -1,0 +1,235 @@
+	1: reserved word: Program
+	1: ID name=HelloWorld
+	1: ;
+	4: reserved word: const
+	5: ID name=MAX
+	5: =
+	5: INT, val=1000
+	5: ;
+	6: ID name=MIN
+	6: =
+	6: INT, val=100
+	6: ;
+	9: reserved word: type
+	10: ID name=a
+	10: =
+	10: TYPE, name=INTEGER
+	10: ;
+	11: ID name=b
+	11: =
+	11: TYPE, name=ARRAY
+	11: [
+	11: INT, val=1
+	11: .
+	11: INT, val=10
+	11: ]
+	11: reserved word: OF
+	11: TYPE, name=INTEGER
+	11: ;
+	12: ID name=c
+	12: =
+	12: ID name=b
+	12: ;
+	13: ID name=d
+	13: =
+	13: (
+	13: ID name=Jan
+	13: ,
+	13: ID name=Feb
+	13: ,
+	13: ID name=Mar
+	13: ,
+	13: ID name=Apr
+	13: ,
+	13: ID name=May
+	13: ,
+	13: ID name=Jun
+	13: ,
+	13: ID name=Jul
+	13: ,
+	13: ID name=Aug
+	13: ,
+	13: ID name=Sep
+	13: ,
+	13: ID name=Oct
+	13: ,
+	13: ID name=Nov
+	13: ,
+	13: ID name=Dec
+	13: )
+	13: ;
+	14: ID name=e
+	14: =
+	14: ID name=MIN
+	14: .
+	14: ID name=MAX
+	14: ;
+	16: ID name=Date
+	16: =
+	16: Unknown token:Record
+	20: ID name=day
+	20: ,
+	20: ID name=son
+	20: :
+	20: INT, val=1
+	20: .
+	20: INT, val=31
+	20: ;
+	21: ID name=vas
+	21: :
+	21: TYPE, name=INTEGER
+	21: ;
+	22: ID name=yea
+	22: :
+	22: INT, val=1970
+	22: .
+	22: INT, val=1999
+	22: ;
+	23: reserved word: End
+	23: ;
+	26: reserved word: var
+	26: ID name=x
+	26: ,
+	26: ID name=y
+	26: ,
+	26: ID name=z
+	26: :
+	26: TYPE, name=INTEGER
+	26: ;
+	27: ID name=u
+	27: ,
+	27: ID name=v
+	27: :
+	27: TYPE, name=CHAR
+	27: ;
+	32: reserved word: procedure
+	32: ID name=Hello
+	32: ;
+	33: reserved word: begin
+	34: writeln
+	34: (
+	34: INT, val=2
+	34: +
+	34: INT, val=3
+	34: )
+	34: ;
+	35: reserved word: end
+	35: ;
+	37: reserved word: function
+	37: ID name=Double2
+	37: (
+	37: ID name=Value
+	37: :
+	37: TYPE, name=Integer
+	37: )
+	37: :
+	37: TYPE, name=Integer
+	37: ;
+	38: reserved word: begin
+	39: ID name=Double2
+	39: Unknown token::=
+	39: ID name=Value
+	39: *
+	39: INT, val=2
+	39: ;
+	40: reserved word: end
+	40: ;
+	43: reserved word: begin
+	46: writeln
+	46: (
+'	46: ID name=Hello
+	46: ,
+	46: ID name=world
+!'	46: )
+	46: ;
+	47: reserved word: end
+	47: .
+	48: EOF
+    Routine Head
+        Const Declare:
+            const int:100
+        Type Declare:
+            Exp ID: a
+            type integer
+        Type Declare:
+            Exp ID: b
+            type array
+                type limit
+                    const int:1
+                    const int:10
+                type integer
+        Type Declare:
+            Exp ID: c
+            type id
+        Type Declare:
+            Exp ID: d
+            type enum
+                Exp ID: Jan
+                Exp ID: Feb
+                Exp ID: Mar
+                Exp ID: Apr
+                Exp ID: May
+                Exp ID: Jun
+                Exp ID: Jul
+                Exp ID: Aug
+                Exp ID: Sep
+                Exp ID: Oct
+                Exp ID: Nov
+                Exp ID: Dec
+        Type Declare:
+            Exp ID: e
+            type limit
+                Exp ID: MIN
+                Exp ID: MAX
+        Type Declare:
+            Exp ID: Date
+            type record
+                Exp ID: day
+                Exp ID: son
+                type limit
+                    const int:1
+                    const int:31
+            type record
+                Exp ID: vas
+                type integer
+            type record
+                Exp ID: yea
+                type limit
+                    const int:1970
+                    const int:1999
+        Var Declare:
+            Exp ID: x
+            Exp ID: y
+            Exp ID: z
+            type integer
+        Var Declare:
+            Exp ID: u
+            Exp ID: v
+            type char
+        Declare Procedure
+            Routine Head
+            system procedure:writeln
+                EXP op: +
+                    const int:2
+                    const int:3
+        Declare Function 
+            type integer
+            val parameters:
+                Exp ID: Value
+                type integer
+            Routine Head
+            EXP op: Unknown token:
+                Exp ID: Double2
+                EXP op: *
+                    Exp ID: Value
+                    const int:2
+    system procedure:writeln
+        Exp ID: Hello
+        Exp ID: world
+unknown node kind.
+Function Name:Hello         
+unknown node kind.
+unknown node kind.
+Function Name:Double2       
+Value           0         
+unknown node kind.

@@ -39,9 +39,7 @@ typedef struct HashListRec/*one points to global, the rest stores all the functi
 } * HashList;
 
 /*************************The top table combines global and function*/
-HashList topHashTable[HASHSIZE];
 
-HashList currentSymTab;
 
 typedef struct
 {
@@ -53,6 +51,7 @@ typedef struct
 	int num1;
 	int num2;
 }st_varInfo;
+
 typedef struct {
     char* name;
     ExpType type;
@@ -68,8 +67,7 @@ typedef struct {
     TreeNode* node;
 }* TypeItem;
 
-ConstValueItem ConstValueTable[ConstValueSize];
-TypeItem TypeTable[TypeTableSize];
+
 
 st_varInfo st_execute(TreeNode * node, int lineno);
 void st_insertdecl_var_list(TreeNode*node);

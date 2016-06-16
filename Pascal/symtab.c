@@ -7,6 +7,13 @@ static int TypeItemNum = 0;
 #define UNINDENT indent-=2
 static int initial = 0;
 
+HashList topHashTable[HASHSIZE];
+
+HashList currentSymTab;
+
+ConstValueItem ConstValueTable[ConstValueSize];
+TypeItem TypeTable[TypeTableSize];
+
 static int hash(char * key)
 {
 	int temp = 0;

@@ -93,7 +93,7 @@
 	16: ;
 	17: reserved word: end
 	17: .
-	18: EOF
+	17: EOF
     Routine Head
         Var Declare:
             Exp ID: i

@@ -1,3 +1,5 @@
+%option yylineno case-insensitive
+
 %{
 #include "global.h"
 #include "util.h"
@@ -10,7 +12,7 @@ digit [0-9]
 real {digit}+\.{digit}+
 number {digit}+
 letter [a-zA-Z]
-identifier {letter}+
+identifier [A-Za-z][A-Za-z0-9_]*
 newline \n
 whitespace [ \t]+
 char \'.\'
@@ -53,7 +55,7 @@ string \".*\"
 "<="        {return TOKEN_LE;}
 "<"         {return TOKEN_LT;}
 "*"         {return TOKEN_MUL;}
-"\\"        {return TOKEN_DIV;}
+"/"        {return TOKEN_DIV;}
 "mod"       {return TOKEN_MOD;}
 "and"       {return TOKEN_AND;}
 "not"       {return TOKEN_NOT;}
@@ -84,9 +86,17 @@ string \".*\"
 {newline}   {lineno++;}
 {whitespace}    {}
 "{"[^{}]*"}" 	{/* ignore comments */}
+
+
 %%
 
-TokenType getToken(){
+int yywrap (void)
+{
+    return 1;
+}
+
+TokenType getToken()
+{
     static int firstTime=True;
     TokenType currentToken;
     if(firstTime){
