@@ -1,0 +1,11 @@
+.DS_Store
+new/*.o
+test
+<<<<<<< HEAD
+new/tmp.list*
+=======
+DerivedData/ 
+Pascal.build/ 
+Pascal.xcodeproj/ 
+
+>>>>>>> 18f5e48d86dc24be0b07c12adb1094b51e669a3f

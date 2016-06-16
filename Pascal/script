@@ -1,0 +1,5 @@
+#!/bin/zsh 
+bison -d tiny.y
+rm *.o
+make
+
