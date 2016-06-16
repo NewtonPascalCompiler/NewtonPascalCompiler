@@ -32,8 +32,7 @@ int main(int argc, char **argv){
     syntaxTree = parse();
     printTree(syntaxTree);
     printf("Begin Coding: \n");
-    //BuildCode(syntaxTree);
-
+    BuildCode(syntaxTree);
    // printf("The SymTab is :\n");
    // printSymTab();
 	printf("End Coding: \n");

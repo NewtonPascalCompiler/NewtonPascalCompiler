@@ -1,3 +1,4 @@
 .DS_Store
 new/*.o
 test
+new/tmp.list*
