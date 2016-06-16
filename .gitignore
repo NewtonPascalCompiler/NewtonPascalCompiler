@@ -5,6 +5,7 @@ Pascal.build/
 Pascal.xcodeproj/ 
 *.bak
 Pascal/*.o
+Pascal/*.obj
 Pascal/masm32
 Pascal/compiler.exe
 Pascal/compiler_cmd.bat

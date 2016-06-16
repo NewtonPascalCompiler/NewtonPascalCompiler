@@ -806,7 +806,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 20 "tiny.l"
+#line 21 "tiny.l"
 
 #line 812 "lex.yy.c"
 
@@ -903,334 +903,334 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 21 "tiny.l"
+#line 22 "tiny.l"
 {return TOKEN_PROGRAM;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 22 "tiny.l"
+#line 23 "tiny.l"
 {return TOKEN_IF;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 23 "tiny.l"
+#line 24 "tiny.l"
 {return TOKEN_THEN;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 24 "tiny.l"
+#line 25 "tiny.l"
 {return TOKEN_ELSE;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 25 "tiny.l"
+#line 26 "tiny.l"
 {return TOKEN_REPEAT;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 26 "tiny.l"
+#line 27 "tiny.l"
 {return TOKEN_UNTIL;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 27 "tiny.l"
+#line 28 "tiny.l"
 {return TOKEN_WHILE;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 28 "tiny.l"
+#line 29 "tiny.l"
 {return TOKEN_DO;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 29 "tiny.l"
+#line 30 "tiny.l"
 {return TOKEN_CASE;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 30 "tiny.l"
+#line 31 "tiny.l"
 {return TOKEN_TO;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 31 "tiny.l"
+#line 32 "tiny.l"
 {return TOKEN_DOWNTO;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 32 "tiny.l"
+#line 33 "tiny.l"
 {return TOKEN_FOR;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 33 "tiny.l"
+#line 34 "tiny.l"
 {return TOKEN_READ;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 34 "tiny.l"
+#line 35 "tiny.l"
 {return TOKEN_WRITE;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 35 "tiny.l"
+#line 36 "tiny.l"
 {return TOKEN_WRITELN;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 37 "tiny.l"
+#line 38 "tiny.l"
 {return TOKEN_LB;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 38 "tiny.l"
+#line 39 "tiny.l"
 {return TOKEN_RB;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 39 "tiny.l"
+#line 40 "tiny.l"
 {return TOKEN_SEMI;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 40 "tiny.l"
+#line 41 "tiny.l"
 {return TOKEN_DOTDOT;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 41 "tiny.l"
+#line 42 "tiny.l"
 {return TOKEN_DOT;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 42 "tiny.l"
+#line 43 "tiny.l"
 {return TOKEN_LP;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 43 "tiny.l"
+#line 44 "tiny.l"
 {return TOKEN_RP;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 44 "tiny.l"
+#line 45 "tiny.l"
 {return TOKEN_COMMA;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 45 "tiny.l"
+#line 46 "tiny.l"
 {return TOKEN_COLON;}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 47 "tiny.l"
+#line 48 "tiny.l"
 {return TOKEN_ASSIGN;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 48 "tiny.l"
+#line 49 "tiny.l"
 {return TOKEN_EQUAL;} 
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 49 "tiny.l"
+#line 50 "tiny.l"
 {return TOKEN_PLUS;}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 50 "tiny.l"
+#line 51 "tiny.l"
 {return TOKEN_MINUS;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 51 "tiny.l"
+#line 52 "tiny.l"
 {return TOKEN_OR;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 52 "tiny.l"
+#line 53 "tiny.l"
 {return TOKEN_UNEQUAL;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 53 "tiny.l"
+#line 54 "tiny.l"
 {return TOKEN_GE;}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 54 "tiny.l"
+#line 55 "tiny.l"
 {return TOKEN_GT;}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 55 "tiny.l"
+#line 56 "tiny.l"
 {return TOKEN_LE;}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 56 "tiny.l"
+#line 57 "tiny.l"
 {return TOKEN_LT;}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 57 "tiny.l"
+#line 58 "tiny.l"
 {return TOKEN_MUL;}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 58 "tiny.l"
+#line 59 "tiny.l"
 {return TOKEN_DIV;}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 59 "tiny.l"
+#line 60 "tiny.l"
 {return TOKEN_MOD;}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 60 "tiny.l"
+#line 61 "tiny.l"
 {return TOKEN_AND;}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 61 "tiny.l"
+#line 62 "tiny.l"
 {return TOKEN_NOT;}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 63 "tiny.l"
+#line 64 "tiny.l"
 {return TOKEN_GOTO;}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 64 "tiny.l"
+#line 65 "tiny.l"
 {return TOKEN_INTEGER_TYPE;}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 65 "tiny.l"
+#line 66 "tiny.l"
 {return TOKEN_BOOLEAN_TYPE;}
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 66 "tiny.l"
+#line 67 "tiny.l"
 {return TOKEN_CHAR_TYPE;}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 67 "tiny.l"
+#line 68 "tiny.l"
 {return TOKEN_REAL_TYPE;}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 68 "tiny.l"
+#line 69 "tiny.l"
 {return TOKEN_TRUE;}
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 69 "tiny.l"
+#line 70 "tiny.l"
 {return TOKEN_FALSE;}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 70 "tiny.l"
+#line 71 "tiny.l"
 {return TOKEN_MAXINT;}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 71 "tiny.l"
+#line 72 "tiny.l"
 {return TOKEN_ARRAY;}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 72 "tiny.l"
+#line 73 "tiny.l"
 {return TOKEN_OF;}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 73 "tiny.l"
+#line 74 "tiny.l"
 {return TOKEN_RECORD;}
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 74 "tiny.l"
+#line 75 "tiny.l"
 {return TOKEN_BEGIN;}
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 75 "tiny.l"
+#line 76 "tiny.l"
 {return TOKEN_END;}
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 76 "tiny.l"
+#line 77 "tiny.l"
 {return TOKEN_CONST;}
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 77 "tiny.l"
+#line 78 "tiny.l"
 {return TOKEN_TYPE;}
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 78 "tiny.l"
+#line 79 "tiny.l"
 {return TOKEN_VAR;}
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 79 "tiny.l"
+#line 80 "tiny.l"
 {return TOKEN_FUNCTION;}
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 80 "tiny.l"
+#line 81 "tiny.l"
 {return TOKEN_PROCEDURE;}
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 81 "tiny.l"
+#line 82 "tiny.l"
 {return TOKEN_INT;}
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 82 "tiny.l"
+#line 83 "tiny.l"
 {return TOKEN_REAL;}
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 83 "tiny.l"
+#line 84 "tiny.l"
 {return TOKEN_CHAR;}
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 84 "tiny.l"
+#line 85 "tiny.l"
 {return TOKEN_STRING;}
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 85 "tiny.l"
+#line 86 "tiny.l"
 {return TOKEN_ID;}
 	YY_BREAK
 case 63:
 /* rule 63 can match eol */
 YY_RULE_SETUP
-#line 86 "tiny.l"
+#line 87 "tiny.l"
 {lineno++;}
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 87 "tiny.l"
+#line 88 "tiny.l"
 {}
 	YY_BREAK
 case 65:
 /* rule 65 can match eol */
 YY_RULE_SETUP
-#line 88 "tiny.l"
+#line 89 "tiny.l"
 {/* ignore comments */}
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 91 "tiny.l"
+#line 92 "tiny.l"
 ECHO;
 	YY_BREAK
 #line 1237 "lex.yy.c"
@@ -2242,7 +2242,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 91 "tiny.l"
+#line 92 "tiny.l"
 
 
 

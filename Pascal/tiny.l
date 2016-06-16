@@ -8,6 +8,7 @@ char previoustokenString[MAXTOKENLEN+1];
 char tokenString[MAXTOKENLEN+1];
 extern int yyerror(char* messega);
 %}
+
 digit [0-9]
 real {digit}+\.{digit}+
 number {digit}+
