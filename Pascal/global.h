@@ -6,14 +6,6 @@
 #include <ctype.h>
 #include <string.h>
 
-<<<<<<< HEAD
-#ifndef YYPARSER
-#include "y.tab.h"
-#define ENDFILE 0
-#endif
-
-=======
->>>>>>> ca0e927c3503bdbcf06b0e579d188a42e83a87ca
 #ifndef False
 #define False 0
 #endif
