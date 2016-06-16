@@ -1,4 +1,4 @@
-Program HelloWorld;
+Program HelloWorld1;
   
   {const_part}
   const 
@@ -43,5 +43,5 @@ Program HelloWorld;
   begin
         {stmt_list}
         {stmt  ';'}
-      writeln('Hello, world!');
+      writeln(2222);
   end.
