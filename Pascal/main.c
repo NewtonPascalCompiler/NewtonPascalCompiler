@@ -2,7 +2,6 @@
 #include "util.h"
 #include "scan.h"
 #include "parse.h"
-#include "analyze.h"
 #include "CodeGenerater.h"
 
 char filename[30] = "system_test.p";
@@ -47,9 +46,9 @@ int main(int argc, char **argv)
     }
     
     printf("Begin Coding: \n");
-    //BuildCode(syntaxTree);
-   // printf("The SymTab is :\n");
-   // printSymTab();
+    BuildCode(syntaxTree);
+    // printf("The SymTab is :\n");
+    // printSymTab();
 	printf("End Coding: \n");
 
 	fclose(listing);
