@@ -18,19 +18,13 @@ szInput_real    db  '%f', 0
 szFormat        db  '%d',  0ah, 0dh , 0
 szFormat_real   db  '%lf', 0ah, 0dh , 0
 tmp			 db 0, 0, 0, 0, 0, 0, 0, 0
-_REALNUM0         dd 1.000000
-_REALNUM1         dd 2.000000
-_REALNUM2         dd 3.000000
-_REALNUM3         dd 4.000000
-_REALNUM4         dd 5.000000
-_REALNUM5         dd 6.000000
     .const
     .code 
 start:  
 mov esi, ebp
 push ebp
 mov ebp, esp
-call luo
+call HelloWorld
 pop ebp
 invoke    ExitProcess,NULL
 
@@ -61,117 +55,71 @@ input_real:
    invoke crt_scanf, addr szInput_real, addr tmp
    fld dword ptr tmp
    ret
-luo:
+
+
+
+
+
+
+
+Hello:
 push ebp
 mov ebp, esp
 mov esi, ss:[ebp+0]
-sub esp, 4		;Allocate Varable space
-sub esp, 24		;Allocate Varable space
-sub esp, 4		;Allocate Varable space
-
-fld dword ptr[_REALNUM0]
-mov eax, 5
-
-sub eax, 5
-sal eax,2
-mov edi, -8
-sub edi, eax
-fstp dword ptr [ebp+edi]
-
-fld dword ptr[_REALNUM1]
-mov eax, 6
-
-sub eax, 5
-sal eax,2
-mov edi, -8
-sub edi, eax
-fstp dword ptr [ebp+edi]
-
-fld dword ptr[_REALNUM2]
-mov eax, 7
-
-sub eax, 5
-sal eax,2
-mov edi, -8
-sub edi, eax
-fstp dword ptr [ebp+edi]
-
-fld dword ptr[_REALNUM3]
-mov eax, 8
-
-sub eax, 5
-sal eax,2
-mov edi, -8
-sub edi, eax
-fstp dword ptr [ebp+edi]
-
-fld dword ptr[_REALNUM4]
-mov eax, 9
-
-sub eax, 5
-sal eax,2
-mov edi, -8
-sub edi, eax
-fstp dword ptr [ebp+edi]
-
-fld dword ptr[_REALNUM5]
-mov eax, 10
-
-sub eax, 5
-sal eax,2
-mov edi, -8
-sub edi, eax
-fstp dword ptr [ebp+edi]
 
 mov eax, 5
+push eax
+call output
+pop  eax
 
-mov ecx, eax 		;ecx = for1
-mov edi, -4
-mov ss:[ebp+edi], ecx
-mov eax, 10
 
-mov edx, eax 		;edx = for2
-inc edx
-__CG__label0:
- cmp ecx, edx
- je __CG__label1		;for end
-push edx		;save for2
-push ecx		;save for1
-mov edi, -4
+add esp, 0
+pop ebp
+ret
+
+
+
+Double2:
+push ebp
+mov ebp, esp
+mov esi, ss:[ebp+0]
+
+mov edi, -16
+mov eax, ss:[esi+edi] 
+push eax
+mov edi, 8
 mov eax, ss:[ebp+edi] 
+push eax
+mov eax, 2
+mov ebx, eax
+pop eax
+xor edx, edx
+mul ebx
+mov ebx, eax
+pop eax
+mov edi, -16
+mov eax, ebx
+mov ss:[esi+edi], eax
 
-sub eax, 5
-sal eax,2
-mov edi, -8
-sub edi, eax
-fld dword ptr [ebp+edi]
-mov edi, -4
+add esp, 0
+pop ebp
+ret
+
+HelloWorld:
+push ebp
+mov ebp, esp
+mov esi, ss:[ebp+0]
+sub esp, 12		;Allocate Varable space
+sub esp, 8		;Allocate Varable space
+
+mov edi, -16
 mov eax, ss:[ebp+edi] 
-
-sub eax, 5
-sal eax,2
-mov edi, -8
-sub edi, eax
-fld dword ptr [ebp+edi]
-fmul
-mov edi, -32
-fstp dword ptr [ebp+edi]
-
-mov edi, -32
-fld dword ptr [ebp+edi]
-call output_real
+push eax
+call output
+pop  eax
 
 
-pop ecx		;restore for1
-pop edx		;restore for2
-inc ecx
-mov edi, -4
-mov ss:[ebp+edi], ecx
-jmp __CG__label0
- __CG__label1:
-
-
-add esp, 32
+add esp, 20
 pop ebp
 ret
 end    start

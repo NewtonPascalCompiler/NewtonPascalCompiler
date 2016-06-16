@@ -2,6 +2,15 @@
 DerivedData/ 
 Pascal.build/ 
 Pascal.xcodeproj/ 
-test
 *.bak
 Pascal/*.o
+Pascal/masm32
+Pascal/compiler.exe
+Pascal/compiler_cmd.bat
+Pascal/libgcc_s_dw2-1.dll
+Pascal/libstdc++-6.dll
+Pascal/link.exe
+Pascal/m1.err
+Pascal/masm.exe
+Pascal/ml.exe
+Pascal/mspdb50.dll
