@@ -35,9 +35,6 @@ void yyerror(const char* s, ...);
 %%
 
 
-program             :   error   TOKEN_DOT   {yyerror("grammar error.\n");}
-                    |   program    error    TOKEN_DOT   {yyerror("grammar error.\n");}
-
 program             :   TOKEN_PROGRAM TOKEN_ID
                         {   savedName1 = copyString(tokenString); }
                         TOKEN_SEMI routine TOKEN_DOT
@@ -398,8 +395,8 @@ ID                  :   TOKEN_ID
 routine_body        :   compound_stmt   {$$=$1;} ;
 compound_stmt       :   TOKEN_BEGIN stmt_list TOKEN_END {$$=$2;} ;
 
-stmt_list: error TOKEN_SEMI        {   yyerror("grammar error.\n");  }
-|   stmt_list error TOKEN_SEMI     {   yyerror("grammar error.\n");  }
+stmt_list: error TOKEN_SEMI        {  yyerror("grammar error.\n");  }
+|   stmt_list error TOKEN_SEMI     {  yyerror("grammar error.\n");  }
 
 stmt_list           :
                         {$$=NULL;}
