@@ -1,4 +1,4 @@
- #ifndef _GLOBALS_H_
+#ifndef _GLOBALS_H_
 #define _GLOBALS_H_
 
 #include <stdio.h>
@@ -6,11 +6,14 @@
 #include <ctype.h>
 #include <string.h>
 
+<<<<<<< HEAD
 #ifndef YYPARSER
 #include "y.tab.h"
 #define ENDFILE 0
 #endif
 
+=======
+>>>>>>> ca0e927c3503bdbcf06b0e579d188a42e83a87ca
 #ifndef False
 #define False 0
 #endif
@@ -18,6 +21,13 @@
 #ifndef True
 #define True 1
 #endif
+
+#ifndef YYPARSER
+#include "tiny.tab.h"
+#define ENDFILE 0
+#endif
+
+
 
 #define MAXRESERVED 8
 typedef int TokenType;
