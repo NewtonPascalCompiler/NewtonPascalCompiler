@@ -1,42 +1,7 @@
-Program HelloWorld;
-  
-  {const_part}
-  const 
-    MAX = 1000;
-      MIN = 100;
-
-  {type_part}
-  type
-    a = INTEGER; 
-    b = ARRAY [1..10] OF INTEGER; {array `simple_type_decl` of `type_decl` }
-    c = b;
-        d = (Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec); 
-        e = MIN..MAX;
- 
-    Date=Record                  
-      {field_decl_list}
-      {field_decl}
-                {name_list  :  type_decl  ;}
-          day, son: 1..31;
-          vas: INTEGER;
-          yea: 1970..1999;
-      End;
-    
-    {var_part}
-    var x, y, z: INTEGER;
-        u, v: CHAR;
-    
-    {routine_part}
-    {(function_decl or procedure_decl)*}
-    
-    function Double2(Value:Integer):Integer;
-    begin
-        Double2 := Value * 2;
-  end;
- 
-    {routine_body}
-  begin
-        {stmt_list}
-        {stmt  ';'}
-      writeln('Hello, world!');
-  end.
+program yu;
+begin
+  aaa 
+ writeln(x); 
+  bbb
+  writeln(y);
+end.

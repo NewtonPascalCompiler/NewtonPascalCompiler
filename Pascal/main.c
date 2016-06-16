@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 		print_help();
 		exit(1);
 	}
-    source = fopen(argv[1],"r");
+    source = fopen(argv[1], "r");
     
     //file not found
     if (source == NULL) {
@@ -40,8 +40,14 @@ int main(int argc, char **argv)
     syntaxTree = parse();
     
     printTree(syntaxTree);
+    
+    if (syntaxTree == NULL) {
+        printf("由于前面的错误，编译无法进行。\n");
+        //return 1;
+    }
+    
     printf("Begin Coding: \n");
-    BuildCode(syntaxTree);
+    //BuildCode(syntaxTree);
    // printf("The SymTab is :\n");
    // printSymTab();
 	printf("End Coding: \n");

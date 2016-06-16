@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 	1: reserved word: program
 	1: ID name=yu
 	1: ;
@@ -162,3 +164,4 @@ The index of array m over in line 14!
 The index of array m over in line 14!
 The index of array m over in line 14!
 unknown node kind.
+>>>>>>> 475b8c776f97ec09b8ebeb2fda3d39cca57be481
