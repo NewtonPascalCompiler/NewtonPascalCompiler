@@ -1,4 +1,5 @@
 .DS_Store
+Debug/
 DerivedData/ 
 Pascal.build/ 
 Pascal.xcodeproj/ 
