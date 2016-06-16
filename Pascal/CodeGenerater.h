@@ -2,10 +2,10 @@
 #define CODEGEN_H
 
 
-#include <stdio.h>
+#include<stdio.h>
 #include "global.h"
 #include "symtab.h"
-#include "tiny.tab.h"
+#include "y.tab.h"
 
 #ifdef CG_DEBUG
 extern FILE* tmp_out;

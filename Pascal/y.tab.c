@@ -83,7 +83,7 @@ static int yylex(){
 int yyerror(char* message);
 
 /* Line 371 of yacc.c  */
-#line 87 "tiny.tab.c"
+#line 87 "y.tab.c"
 
 # ifndef YY_NULL
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -102,9 +102,9 @@ int yyerror(char* message);
 #endif
 
 /* In a future release of Bison, this section will be replaced
-   by #include "tiny.tab.h".  */
-#ifndef YY_YY_TINY_TAB_H_INCLUDED
-# define YY_YY_TINY_TAB_H_INCLUDED
+   by #include "y.tab.h".  */
+#ifndef YY_YY_Y_TAB_H_INCLUDED
+# define YY_YY_Y_TAB_H_INCLUDED
 /* Enabling traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -209,12 +209,12 @@ int yyparse ();
 #endif
 #endif /* ! YYPARSE_PARAM */
 
-#endif /* !YY_YY_TINY_TAB_H_INCLUDED  */
+#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
 /* Line 390 of yacc.c  */
-#line 218 "tiny.tab.c"
+#line 218 "y.tab.c"
 
 #ifdef short
 # undef short
@@ -2775,7 +2775,7 @@ yyreduce:
 
 
 /* Line 1792 of yacc.c  */
-#line 2779 "tiny.tab.c"
+#line 2779 "y.tab.c"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires

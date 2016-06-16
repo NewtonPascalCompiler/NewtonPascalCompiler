@@ -4,8 +4,6 @@
 #include "util.h"
 #include "scan.h"
 #include "parse.h"
-#include <stdarg.h>
-
 #define YYSTYPE TreeNode *
 static char * savedName;
 static char * savedName1;
@@ -13,17 +11,11 @@ static int savedLineNo;
 static TreeNode* savedTree;
 static int savedNum;
 static int level=0;
-extern int yylineno;
-extern int yylex();
-extern char * yytext;
-/*
 static int yylex(){
     return getToken();
 }
-*/
-void yyerror(const char* s, ...);
+int yyerror(char* message);
 %}
-
 %token TOKEN_PROGRAM TOKEN_FUNCTION TOKEN_PROCEDURE TOKEN_CONST TOKEN_TYPE TOKEN_VAR
 %token TOKEN_IF TOKEN_THEN TOKEN_ELSE TOKEN_REPEAT TOKEN_UNTIL TOKEN_WHILE TOKEN_DO TOKEN_CASE TOKEN_TO TOKEN_DOWNTO TOKEN_FOR
 %token TOKEN_EQUAL TOKEN_UNEQUAL TOKEN_GE TOKEN_GT TOKEN_LE TOKEN_LT TOKEN_ASSIGN TOKEN_PLUS TOKEN_MINUS TOKEN_MUL TOKEN_DIV TOKEN_OR TOKEN_AND TOKEN_NOT TOKEN_MOD TOKEN_READ TOKEN_WRITE TOKEN_WRITELN
@@ -89,8 +81,8 @@ function_decl       :   function_head TOKEN_SEMI routine TOKEN_SEMI
 			
                             $$->child[0]=$1->child[1];
                             $$->child[1]=$1->child[0];
-			    			$$->child[2]=$3;
-			    			free($1);
+			    $$ ->child[2]=$3;
+			    free($1);
                         }
                     ;
 function_head       :   TOKEN_FUNCTION TOKEN_ID
@@ -141,7 +133,7 @@ procedure_decl      :   procedure_head TOKEN_SEMI routine TOKEN_SEMI
                             $$->attr.name=copyString( $1->attr.name);
                             $$->child[0]=NULL;
                             $$->child[1]=$1->child[0];
-			    			$$->child[2]=$3;
+			    $$ ->child[2]=$3;
                             free($1);
                         }
                     ;
@@ -613,20 +605,15 @@ factor              :   ID
                     ;
 %%
 
-void yyerror(const char* s, ...){
-    
-    va_list ap;
-    va_start(ap, s);	
-    fprintf(stderr, "line %d: error near '%s': ", yylineno, yytext);
-    
-    vfprintf(stderr, s, ap);
-    fprintf(stderr, "\n");
-    va_end(ap);
+int yyerror(char* message){
+    fprintf(listing, "Syntax error at line %d: %s\n",lineno,message);
+   // printToken(yychar, tokenString);
+    return 0;
 }
 
 
-TreeNode * parse()
-{
+TreeNode * parse(){
     yyparse();
     return savedTree;
+
 }
