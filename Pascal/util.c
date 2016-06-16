@@ -44,7 +44,7 @@ void printToken(TokenType token, const char * tokenString){
         case TOKEN_PLUS:    fprintf(listing,"+\n");break;
         case TOKEN_MINUS:   fprintf(listing,"-\n");break;
         case TOKEN_MUL:     fprintf(listing,"*\n");break;
-        case TOKEN_DIV:     fprintf(listing,"\\n");break;
+        case TOKEN_DIV:     fprintf(listing,"/\n");break;
         case TOKEN_OR:      fprintf(listing,"or\n");break;
         case TOKEN_AND:     fprintf(listing,"and\n");break; 
         case TOKEN_MOD:     fprintf(listing,"mod\n");break; 
@@ -82,7 +82,8 @@ void printToken(TokenType token, const char * tokenString){
     }
 }
 
-TreeNode * newDeclNode(DeclKind kind){
+TreeNode * newDeclNode(DeclKind kind)
+{
     TreeNode * t = (TreeNode *)malloc(sizeof(TreeNode));
     int i;
     if(t==NULL)
@@ -219,7 +220,10 @@ void printTree(TreeNode * tree){
                     case STMT_WHILE:    fprintf(listing,"while\n");break;
                     case STMT_CASE:     fprintf(listing,"case\n");break;
                     case STMT_FOR:      fprintf(listing,"for direction:");printToken(tree->attr.op,"\0");break;
-                    case STMT_PROC_SYS:  fprintf(listing,"system procedure:");printToken(tree->attr.op,"\0");break;
+                    case STMT_PROC_SYS:
+                        fprintf(listing,"system procedure:");
+                        printToken(tree->attr.op,"\0");
+                        break;
                     case STMT_PROC_ID:   fprintf(listing,"procedure:");break;
                     default: fprintf(listing,"Unknown Statement type\n");break;
                 }
@@ -237,6 +241,8 @@ void printTree(TreeNode * tree){
                             case EXPTYPE_REAL: fprintf(listing,"const real:%lf\n",tree->attr.real_val); break;
                             case EXPTYPE_CHAR: fprintf(listing,"const char:%c\n",tree->attr.char_val); break;
                             case EXPTYPE_STRING: fprintf(listing,"const string:%s\n",tree->attr.string_val); break;
+                            default:
+                                break;
                         }
                         break;
                     case EXP_ID: fprintf(listing,"Exp ID: %s\n",tree->attr.name); break;

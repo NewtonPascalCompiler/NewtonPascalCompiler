@@ -497,7 +497,7 @@ void GExpOpCode(TreeNode* pnode)
 			default:
 				break;
 		}
-		pnode->kind.exp==EXP_CONST;
+		pnode->kind.exp = EXP_CONST;
 		pnode->attr.val = nn;
 		pnode->type = pnode->child[1]->type;
 		sprintf(tmp,"mov eax, %d\n",nn);

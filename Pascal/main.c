@@ -22,8 +22,14 @@ int main(int argc, char **argv)
 	}
     source = fopen(argv[1],"r");
     
+    //file not found
+    if (source == NULL) {
+        printf("fatal error: file %s does not exists\n", argv[1]);
+        return 1;
+    }
+    
     listing = fopen("tmp.list", "w+");
-   // listing = stdout;
+    // listing = stdout;
 	if(argc == 3){
 		InitialGenerater(argv[2]);
 	}

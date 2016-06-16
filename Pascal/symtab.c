@@ -263,8 +263,7 @@ st_varInfo st_execute(TreeNode * node, int lineno)
 	st_varInfo ml;
 	switch(node->nodekind)
 	{
-		case NODE_EXPRESSION: //是表达式节点 要返回表达式(变量和函数的)的位置信息，并且检查该变量是否定义
-		{
+		case NODE_EXPRESSION: {
 			switch(node->kind.exp)
 			{
 				case EXP_FUNC:	/*return the call function addr*/
@@ -281,7 +280,7 @@ st_varInfo st_execute(TreeNode * node, int lineno)
 
                         if(node->type == EXPTYPE_ARRAY){
                             if(node->child[0]->attr.val > ml.num2||node->child[0]->attr.val < ml.num1){
-                                fprintf(listing, "The index of array over!!!!\n", node->attr.name, lineno);
+                                fprintf(listing, "The index of array %s over in line %d!\n", node->attr.name, lineno);
                             }
     
                         }
@@ -291,7 +290,7 @@ st_varInfo st_execute(TreeNode * node, int lineno)
 					break;
 			}
 		}break;
-		case NODE_DECLARE://是定义的节点，所以要插入符号表，检查函数是否重定义
+		case NODE_DECLARE:
 		{
 			switch(node->kind.decl)
 			{
@@ -369,7 +368,7 @@ st_varInfo st_execute(TreeNode * node, int lineno)
 				case DECL_VAR:
 					st_execute(node->child[1],node->child[1]->lineno);//计算pnode的类型
 					node ->child[0]->type = node->child[1]->type;
-					//把多个变量插入符号表
+					
 					node = node->child[0];
 					while(1){
 						if(st_local_lookup(currentSymTab, node->attr.name).offset!=-1)
@@ -388,7 +387,7 @@ st_varInfo st_execute(TreeNode * node, int lineno)
 						break;
 			}
 		}break;
-		case NODE_TYPE: //类型节点 功能是计算类型
+		case NODE_TYPE:
 		{
 			switch(node->kind.type)
 			{
@@ -403,10 +402,10 @@ st_varInfo st_execute(TreeNode * node, int lineno)
 				break;
 			case TYPE_SIMPLE_ENUM:
 				node ->type = EXPTYPE_ENUM;
-				//处理枚举类型的定义
+				
 				break;
 			case TYPE_SIMPLE_LIMIT:
-				//处理limit类型的定义
+				
 				node ->type = EXPTYPE_LIMIT;
 			case TYPE_ARRAY:
 				node->type = EXPTYPE_ARRAY;
