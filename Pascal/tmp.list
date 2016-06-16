@@ -1,0 +1,167 @@
+<<<<<<< HEAD
+=======
+	1: reserved word: program
+	1: ID name=yu
+	1: ;
+	2: reserved word: const
+	2: ID name=aa
+	2: =
+	2: INT, val=5
+	2: ;
+	3: reserved word: type
+	3: ID name=ii
+	3: =
+	3: TYPE, name=integer
+	3: ;
+	4: ID name=jj
+	4: =
+	4: TYPE, name=array
+	4: [
+	4: INT, val=5
+	4: .
+	4: INT, val=10
+	4: ]
+	4: reserved word: of
+	4: TYPE, name=integer
+	4: ;
+	5: reserved word: var
+	5: ID name=n
+	5: ,
+	5: ID name=m
+	5: :
+	5: ID name=jj
+	5: ;
+	6: ID name=x
+	6: ,
+	6: ID name=y
+	6: :
+	6: ID name=ii
+	6: ;
+	7: reserved word: begin
+	8: ID name=m
+	8: [
+	8: INT, val=5
+	8: ]
+	8: Unknown token::=
+	8: INT, val=0
+	8: ;
+	9: ID name=m
+	9: [
+	9: INT, val=6
+	9: ]
+	9: Unknown token::=
+	9: INT, val=1
+	9: ;
+	10: ID name=m
+	10: [
+	10: INT, val=7
+	10: ]
+	10: Unknown token::=
+	10: INT, val=28
+	10: ;
+	11: ID name=m
+	11: [
+	11: INT, val=8
+	11: ]
+	11: Unknown token::=
+	11: INT, val=3
+	11: ;
+	12: ID name=m
+	12: [
+	12: INT, val=9
+	12: ]
+	12: Unknown token::=
+	12: INT, val=4
+	12: ;
+	13: ID name=m
+	13: [
+	13: INT, val=10
+	13: ]
+	13: Unknown token::=
+	13: INT, val=7
+	13: ;
+	14: ID name=x
+	14: Unknown token::=
+	14: ID name=m
+	14: [
+	14: ID name=m
+	14: [
+	14: INT, val=10
+	14: ]
+	14: ]
+	14: +
+	14: ID name=aa
+	14: ;
+	15: writeln
+	15: (
+	15: ID name=x
+	15: )
+	15: ;
+	16: reserved word: end
+	16: .
+	17: EOF
+    Routine Head
+        Const Declare:
+            const int:5
+        Type Declare:
+            Exp ID: ii
+            type integer
+        Type Declare:
+            Exp ID: jj
+            type array
+                type limit
+                    const int:5
+                    const int:10
+                type integer
+        Var Declare:
+            Exp ID: n
+            Exp ID: m
+            type id
+        Var Declare:
+            Exp ID: x
+            Exp ID: y
+            type id
+    EXP op: Unknown token:
+        Exp ID: m
+            const int:5
+        const int:0
+    EXP op: Unknown token:
+        Exp ID: m
+            const int:6
+        const int:1
+    EXP op: Unknown token:
+        Exp ID: m
+            const int:7
+        const int:28
+    EXP op: Unknown token:
+        Exp ID: m
+            const int:8
+        const int:3
+    EXP op: Unknown token:
+        Exp ID: m
+            const int:9
+        const int:4
+    EXP op: Unknown token:
+        Exp ID: m
+            const int:10
+        const int:7
+    EXP op: Unknown token:
+        Exp ID: x
+        EXP op: +
+            Exp ID: m
+                Exp ID: m
+                    const int:10
+            Exp ID: aa
+    system procedure:writeln
+        Exp ID: x
+Undefine identifier aa in line 14
+The index of array m over in line 14!
+Undefine identifier aa in line 14
+The index of array m over in line 14!
+The index of array m over in line 14!
+The index of array m over in line 14!
+The index of array m over in line 14!
+The index of array m over in line 14!
+The index of array m over in line 14!
+unknown node kind.
+>>>>>>> 475b8c776f97ec09b8ebeb2fda3d39cca57be481

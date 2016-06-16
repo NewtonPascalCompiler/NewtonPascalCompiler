@@ -661,6 +661,8 @@ void GExpCode(TreeNode *pnode, int isrightvalue)
             pnode->type = st_execute(pnode, pnode->lineno).type;
         }
 		break;
+        default:
+            break;
     }
 	return;
 }
