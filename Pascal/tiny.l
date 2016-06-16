@@ -90,7 +90,13 @@ string \".*\"
 
 %%
 
-TokenType getToken(){
+int yywrap (void)
+{
+    return 1;
+}
+
+TokenType getToken()
+{
     static int firstTime=True;
     TokenType currentToken;
     if(firstTime){

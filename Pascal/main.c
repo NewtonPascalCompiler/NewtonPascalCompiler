@@ -10,14 +10,13 @@ FILE * source ;
 FILE * listing ;
 int TraceScan = True;
 int lineno=0;
-int yywrap (void);
 void print_help(void);
 
 int main(int argc, char **argv)
 {
 	TreeNode* syntaxTree;
 	char* outputfile;
-	if(argc <2) {
+	if(argc < 2) {
 		print_help();
 		exit(1);
 	}
@@ -46,11 +45,10 @@ int main(int argc, char **argv)
 
 }
 
-int yywrap (void ){
-	return 1;
-}
 
-void print_help(void){
+
+void print_help(void)
+{
 	printf("The Usage:\n");
 	printf("compiler pascal_source_filename [assemble_filename]\n");
 }

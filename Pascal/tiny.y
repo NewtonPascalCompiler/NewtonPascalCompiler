@@ -13,6 +13,9 @@ static int savedLineNo;
 static TreeNode* savedTree;
 static int savedNum;
 static int level=0;
+extern int yylineno;
+extern int yylex();
+extern char * yytext;
 /*
 static int yylex(){
     return getToken();

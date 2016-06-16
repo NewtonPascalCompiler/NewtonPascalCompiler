@@ -1,23 +1,24 @@
-
-/* A Bison parser, made by GNU Bison 2.4.1.  */
+/* A Bison parser, made by GNU Bison 2.3.  */
 
 /* Skeleton implementation for Bison's Yacc-like parsers in C
-   
-      Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+
+   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
    Free Software Foundation, Inc.
-   
-   This program is free software: you can redistribute it and/or modify
+
+   This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation, either version 3 of the License, or
-   (at your option) any later version.
-   
+   the Free Software Foundation; either version 2, or (at your option)
+   any later version.
+
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-   
+
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -28,7 +29,7 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-   
+
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
@@ -46,7 +47,7 @@
 #define YYBISON 1
 
 /* Bison version.  */
-#define YYBISON_VERSION "2.4.1"
+#define YYBISON_VERSION "2.3"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -54,60 +55,9 @@
 /* Pure parsers.  */
 #define YYPURE 0
 
-/* Push parsers.  */
-#define YYPUSH 0
-
-/* Pull parsers.  */
-#define YYPULL 1
-
 /* Using locations.  */
 #define YYLSP_NEEDED 0
 
-
-
-/* Copy the first part of user declarations.  */
-
-/* Line 189 of yacc.c  */
-#line 1 "tiny.y"
-
-#define YYPARSER
-#include "global.h"
-#include "util.h"
-#include "scan.h"
-#include "parse.h"
-#define YYSTYPE TreeNode *
-static char * savedName;
-static char * savedName1;
-static int savedLineNo;
-static TreeNode* savedTree;
-static int savedNum;
-static int level=0;
-static int yylex(){
-    return getToken();
-}
-int yyerror(char* message);
-
-
-/* Line 189 of yacc.c  */
-#line 93 "y.tab.c"
-
-/* Enabling traces.  */
-#ifndef YYDEBUG
-# define YYDEBUG 0
-#endif
-
-/* Enabling verbose error messages.  */
-#ifdef YYERROR_VERBOSE
-# undef YYERROR_VERBOSE
-# define YYERROR_VERBOSE 1
-#else
-# define YYERROR_VERBOSE 0
-#endif
-
-/* Enabling the token table.  */
-#ifndef YYTOKEN_TABLE
-# define YYTOKEN_TABLE 0
-#endif
 
 
 /* Tokens.  */
@@ -249,19 +199,66 @@ int yyerror(char* message);
 
 
 
+/* Copy the first part of user declarations.  */
+#line 1 "tiny.y"
+
+#define YYPARSER
+#include "global.h"
+#include "util.h"
+#include "scan.h"
+#include "parse.h"
+#include <stdarg.h>
+
+#define YYSTYPE TreeNode *
+static char * savedName;
+static char * savedName1;
+static int savedLineNo;
+static TreeNode* savedTree;
+static int savedNum;
+static int level=0;
+extern int yylineno;
+extern int yylex();
+extern char * yytext;
+/*
+static int yylex(){
+    return getToken();
+}
+*/
+void yyerror(const char* s, ...);
+
+
+/* Enabling traces.  */
+#ifndef YYDEBUG
+# define YYDEBUG 0
+#endif
+
+/* Enabling verbose error messages.  */
+#ifdef YYERROR_VERBOSE
+# undef YYERROR_VERBOSE
+# define YYERROR_VERBOSE 1
+#else
+# define YYERROR_VERBOSE 0
+#endif
+
+/* Enabling the token table.  */
+#ifndef YYTOKEN_TABLE
+# define YYTOKEN_TABLE 0
+#endif
+
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef int YYSTYPE;
-# define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
+# define YYSTYPE_IS_TRIVIAL 1
 #endif
+
 
 
 /* Copy the second part of user declarations.  */
 
 
-/* Line 264 of yacc.c  */
-#line 265 "y.tab.c"
+/* Line 216 of yacc.c.  */
+#line 262 "tiny.tab.c"
 
 #ifdef short
 # undef short
@@ -311,7 +308,7 @@ typedef short int yytype_int16;
 #define YYSIZE_MAXIMUM ((YYSIZE_T) -1)
 
 #ifndef YY_
-# if YYENABLE_NLS
+# if defined YYENABLE_NLS && YYENABLE_NLS
 #  if ENABLE_NLS
 #   include <libintl.h> /* INFRINGES ON USER NAME SPACE */
 #   define YY_(msgid) dgettext ("bison-runtime", msgid)
@@ -336,14 +333,14 @@ typedef short int yytype_int16;
 #if (defined __STDC__ || defined __C99__FUNC__ \
      || defined __cplusplus || defined _MSC_VER)
 static int
-YYID (int yyi)
+YYID (int i)
 #else
 static int
-YYID (yyi)
-    int yyi;
+YYID (i)
+    int i;
 #endif
 {
-  return yyi;
+  return i;
 }
 #endif
 
@@ -424,9 +421,9 @@ void free (void *); /* INFRINGES ON USER NAME SPACE */
 /* A type that is properly aligned for any stack member.  */
 union yyalloc
 {
-  yytype_int16 yyss_alloc;
-  YYSTYPE yyvs_alloc;
-};
+  yytype_int16 yyss;
+  YYSTYPE yyvs;
+  };
 
 /* The size of the maximum gap between one aligned stack and the next.  */
 # define YYSTACK_GAP_MAXIMUM (sizeof (union yyalloc) - 1)
@@ -460,12 +457,12 @@ union yyalloc
    elements in the stack, and YYPTR gives the new location of the
    stack.  Advance YYPTR to a properly aligned location for the next
    stack.  */
-# define YYSTACK_RELOCATE(Stack_alloc, Stack)				\
+# define YYSTACK_RELOCATE(Stack)					\
     do									\
       {									\
 	YYSIZE_T yynewbytes;						\
-	YYCOPY (&yyptr->Stack_alloc, Stack, yysize);			\
-	Stack = &yyptr->Stack_alloc;					\
+	YYCOPY (&yyptr->Stack, Stack, yysize);				\
+	Stack = &yyptr->Stack;						\
 	yynewbytes = yystacksize * sizeof (*Stack) + YYSTACK_GAP_MAXIMUM; \
 	yyptr += yynewbytes / sizeof (*yyptr);				\
       }									\
@@ -603,19 +600,19 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,    31,    31,    30,    37,    42,    51,    52,    63,    74,
-      75,    77,    89,    88,    99,   100,   103,   114,   117,   123,
-     130,   141,   140,   149,   150,   153,   164,   166,   175,   176,
-     179,   192,   195,   204,   210,   216,   222,   230,   236,   242,
-     250,   251,   254,   266,   269,   275,   276,   277,   279,   282,
-     294,   296,   303,   312,   319,   324,   330,   338,   346,   353,
-     357,   361,   365,   370,   382,   384,   388,   389,   391,   392,
-     406,   405,   413,   416,   417,   418,   419,   420,   421,   422,
-     423,   424,   425,   431,   441,   446,   453,   454,   456,   462,
-     463,   468,   473,   484,   485,   491,   497,   506,   515,   522,
-     529,   535,   540,   544,   549,   560,   562,   563,   564,   565,
-     566,   567,   568,   570,   571,   572,   573,   575,   576,   577,
-     578,   579,   581,   583,   588,   589,   590,   593,   596,   601
+       0,    39,    39,    38,    45,    50,    59,    60,    71,    82,
+      83,    85,    97,    96,   107,   108,   111,   122,   125,   131,
+     138,   149,   148,   157,   158,   161,   172,   174,   183,   184,
+     187,   200,   203,   212,   218,   224,   230,   238,   244,   250,
+     258,   259,   262,   274,   277,   283,   284,   285,   287,   290,
+     302,   304,   311,   320,   326,   331,   337,   345,   353,   360,
+     364,   368,   372,   377,   389,   391,   395,   396,   398,   399,
+     413,   412,   420,   423,   424,   425,   426,   427,   428,   429,
+     430,   431,   432,   438,   448,   453,   460,   461,   463,   469,
+     470,   475,   480,   491,   492,   498,   504,   513,   522,   529,
+     536,   542,   547,   551,   556,   567,   569,   570,   571,   572,
+     573,   574,   575,   577,   578,   579,   580,   582,   583,   584,
+     585,   586,   588,   590,   595,   596,   597,   600,   603,   608
 };
 #endif
 
@@ -637,15 +634,15 @@ static const char *const yytname[] =
   "TOKEN_CHAR_TYPE", "TOKEN_REAL_TYPE", "TOKEN_TRUE", "TOKEN_FALSE",
   "TOKEN_MAXINT", "TOKEN_ARRAY", "TOKEN_OF", "TOKEN_RECORD", "TOKEN_BEGIN",
   "TOKEN_END", "TOKEN_GOTO", "TOKEN_ID", "TOKEN_INT", "TOKEN_REAL",
-  "TOKEN_CHAR", "TOKEN_STRING", "ERROR", "$accept", "program", "$@1",
+  "TOKEN_CHAR", "TOKEN_STRING", "ERROR", "$accept", "program", "@1",
   "routine", "routine_head", "routine_part", "function_decl",
-  "function_head", "$@2", "parameters", "para_decl_list", "para_type_list",
-  "procedure_decl", "procedure_head", "$@3", "var_part", "var_decl_list",
+  "function_head", "@2", "parameters", "para_decl_list", "para_type_list",
+  "procedure_decl", "procedure_head", "@3", "var_part", "var_decl_list",
   "var_decl", "const_part", "const_expr_list", "const_expr", "const_value",
   "type_part", "type_decl_list", "type_definition", "type_decl",
   "record_type_decl", "field_decl_list", "field_decl", "array_type_decl",
   "simple_type_decl", "name_list", "ID", "routine_body", "compound_stmt",
-  "stmt_list", "stmt", "$@4", "no_label_stmt", "assign_stmt", "goto_stmt",
+  "stmt_list", "stmt", "@4", "no_label_stmt", "assign_stmt", "goto_stmt",
   "if_stmt", "else_clause", "repeat_stmt", "while_stmt", "case_stmt",
   "case_expr_list", "case_expr", "for_stmt", "proc_stmt", "args_list",
   "expression", "expr", "term", "factor", 0
@@ -997,7 +994,7 @@ while (YYID (0))
    we won't break user code: when these are the locations we know.  */
 
 #ifndef YY_LOCATION_PRINT
-# if YYLTYPE_IS_TRIVIAL
+# if defined YYLTYPE_IS_TRIVIAL && YYLTYPE_IS_TRIVIAL
 #  define YY_LOCATION_PRINT(File, Loc)			\
      fprintf (File, "%d.%d-%d.%d",			\
 	      (Loc).first_line, (Loc).first_column,	\
@@ -1108,20 +1105,17 @@ yy_symbol_print (yyoutput, yytype, yyvaluep)
 #if (defined __STDC__ || defined __C99__FUNC__ \
      || defined __cplusplus || defined _MSC_VER)
 static void
-yy_stack_print (yytype_int16 *yybottom, yytype_int16 *yytop)
+yy_stack_print (yytype_int16 *bottom, yytype_int16 *top)
 #else
 static void
-yy_stack_print (yybottom, yytop)
-    yytype_int16 *yybottom;
-    yytype_int16 *yytop;
+yy_stack_print (bottom, top)
+    yytype_int16 *bottom;
+    yytype_int16 *top;
 #endif
 {
   YYFPRINTF (stderr, "Stack now");
-  for (; yybottom <= yytop; yybottom++)
-    {
-      int yybot = *yybottom;
-      YYFPRINTF (stderr, " %d", yybot);
-    }
+  for (; bottom <= top; ++bottom)
+    YYFPRINTF (stderr, " %d", *bottom);
   YYFPRINTF (stderr, "\n");
 }
 
@@ -1155,11 +1149,11 @@ yy_reduce_print (yyvsp, yyrule)
   /* The symbols being reduced.  */
   for (yyi = 0; yyi < yynrhs; yyi++)
     {
-      YYFPRINTF (stderr, "   $%d = ", yyi + 1);
+      fprintf (stderr, "   $%d = ", yyi + 1);
       yy_symbol_print (stderr, yyrhs[yyprhs[yyrule] + yyi],
 		       &(yyvsp[(yyi + 1) - (yynrhs)])
 		       		       );
-      YYFPRINTF (stderr, "\n");
+      fprintf (stderr, "\n");
     }
 }
 
@@ -1439,8 +1433,10 @@ yydestruct (yymsg, yytype, yyvaluep)
 	break;
     }
 }
+
 
 /* Prevent warnings from -Wmissing-prototypes.  */
+
 #ifdef YYPARSE_PARAM
 #if defined __STDC__ || defined __cplusplus
 int yyparse (void *YYPARSE_PARAM);
@@ -1456,10 +1452,11 @@ int yyparse ();
 #endif /* ! YYPARSE_PARAM */
 
 
-/* The lookahead symbol.  */
+
+/* The look-ahead symbol.  */
 int yychar;
 
-/* The semantic value of the lookahead symbol.  */
+/* The semantic value of the look-ahead symbol.  */
 YYSTYPE yylval;
 
 /* Number of syntax errors so far.  */
@@ -1467,9 +1464,9 @@ int yynerrs;
 
 
 
-/*-------------------------.
-| yyparse or yypush_parse.  |
-`-------------------------*/
+/*----------.
+| yyparse.  |
+`----------*/
 
 #ifdef YYPARSE_PARAM
 #if (defined __STDC__ || defined __C99__FUNC__ \
@@ -1493,39 +1490,14 @@ yyparse ()
 #endif
 #endif
 {
-
-
-    int yystate;
-    /* Number of tokens to shift before error messages enabled.  */
-    int yyerrstatus;
-
-    /* The stacks and their tools:
-       `yyss': related to states.
-       `yyvs': related to semantic values.
-
-       Refer to the stacks thru separate pointers, to allow yyoverflow
-       to reallocate them elsewhere.  */
-
-    /* The state stack.  */
-    yytype_int16 yyssa[YYINITDEPTH];
-    yytype_int16 *yyss;
-    yytype_int16 *yyssp;
-
-    /* The semantic value stack.  */
-    YYSTYPE yyvsa[YYINITDEPTH];
-    YYSTYPE *yyvs;
-    YYSTYPE *yyvsp;
-
-    YYSIZE_T yystacksize;
-
+  
+  int yystate;
   int yyn;
   int yyresult;
-  /* Lookahead token as an internal (translated) token number.  */
-  int yytoken;
-  /* The variables used to return semantic value and location from the
-     action routines.  */
-  YYSTYPE yyval;
-
+  /* Number of tokens to shift before error messages enabled.  */
+  int yyerrstatus;
+  /* Look-ahead token as an internal (translated) token number.  */
+  int yytoken = 0;
 #if YYERROR_VERBOSE
   /* Buffer for error messages, and its allocated size.  */
   char yymsgbuf[128];
@@ -1533,28 +1505,51 @@ yyparse ()
   YYSIZE_T yymsg_alloc = sizeof yymsgbuf;
 #endif
 
+  /* Three stacks and their tools:
+     `yyss': related to states,
+     `yyvs': related to semantic values,
+     `yyls': related to locations.
+
+     Refer to the stacks thru separate pointers, to allow yyoverflow
+     to reallocate them elsewhere.  */
+
+  /* The state stack.  */
+  yytype_int16 yyssa[YYINITDEPTH];
+  yytype_int16 *yyss = yyssa;
+  yytype_int16 *yyssp;
+
+  /* The semantic value stack.  */
+  YYSTYPE yyvsa[YYINITDEPTH];
+  YYSTYPE *yyvs = yyvsa;
+  YYSTYPE *yyvsp;
+
+
+
 #define YYPOPSTACK(N)   (yyvsp -= (N), yyssp -= (N))
+
+  YYSIZE_T yystacksize = YYINITDEPTH;
+
+  /* The variables used to return semantic value and location from the
+     action routines.  */
+  YYSTYPE yyval;
+
 
   /* The number of symbols on the RHS of the reduced rule.
      Keep to zero when no symbol should be popped.  */
   int yylen = 0;
-
-  yytoken = 0;
-  yyss = yyssa;
-  yyvs = yyvsa;
-  yystacksize = YYINITDEPTH;
 
   YYDPRINTF ((stderr, "Starting parse\n"));
 
   yystate = 0;
   yyerrstatus = 0;
   yynerrs = 0;
-  yychar = YYEMPTY; /* Cause a token to be read.  */
+  yychar = YYEMPTY;		/* Cause a token to be read.  */
 
   /* Initialize stack pointers.
      Waste one element of value and location stack
      so that they stay on the same level as the state stack.
      The wasted elements are never initialized.  */
+
   yyssp = yyss;
   yyvsp = yyvs;
 
@@ -1584,6 +1579,7 @@ yyparse ()
 	YYSTYPE *yyvs1 = yyvs;
 	yytype_int16 *yyss1 = yyss;
 
+
 	/* Each stack pointer address is followed by the size of the
 	   data in use in that stack, in bytes.  This used to be a
 	   conditional around just the two extra args, but that might
@@ -1591,6 +1587,7 @@ yyparse ()
 	yyoverflow (YY_("memory exhausted"),
 		    &yyss1, yysize * sizeof (*yyssp),
 		    &yyvs1, yysize * sizeof (*yyvsp),
+
 		    &yystacksize);
 
 	yyss = yyss1;
@@ -1613,8 +1610,9 @@ yyparse ()
 	  (union yyalloc *) YYSTACK_ALLOC (YYSTACK_BYTES (yystacksize));
 	if (! yyptr)
 	  goto yyexhaustedlab;
-	YYSTACK_RELOCATE (yyss_alloc, yyss);
-	YYSTACK_RELOCATE (yyvs_alloc, yyvs);
+	YYSTACK_RELOCATE (yyss);
+	YYSTACK_RELOCATE (yyvs);
+
 #  undef YYSTACK_RELOCATE
 	if (yyss1 != yyssa)
 	  YYSTACK_FREE (yyss1);
@@ -1625,6 +1623,7 @@ yyparse ()
       yyssp = yyss + yysize - 1;
       yyvsp = yyvs + yysize - 1;
 
+
       YYDPRINTF ((stderr, "Stack size increased to %lu\n",
 		  (unsigned long int) yystacksize));
 
@@ -1634,9 +1633,6 @@ yyparse ()
 
   YYDPRINTF ((stderr, "Entering state %d\n", yystate));
 
-  if (yystate == YYFINAL)
-    YYACCEPT;
-
   goto yybackup;
 
 /*-----------.
@@ -1645,16 +1641,16 @@ yyparse ()
 yybackup:
 
   /* Do appropriate processing given the current state.  Read a
-     lookahead token if we need one and don't already have one.  */
+     look-ahead token if we need one and don't already have one.  */
 
-  /* First try to decide what to do without reference to lookahead token.  */
+  /* First try to decide what to do without reference to look-ahead token.  */
   yyn = yypact[yystate];
   if (yyn == YYPACT_NINF)
     goto yydefault;
 
-  /* Not known => get a lookahead token if don't already have one.  */
+  /* Not known => get a look-ahead token if don't already have one.  */
 
-  /* YYCHAR is either YYEMPTY or YYEOF or a valid lookahead symbol.  */
+  /* YYCHAR is either YYEMPTY or YYEOF or a valid look-ahead symbol.  */
   if (yychar == YYEMPTY)
     {
       YYDPRINTF ((stderr, "Reading a token: "));
@@ -1686,16 +1682,20 @@ yybackup:
       goto yyreduce;
     }
 
+  if (yyn == YYFINAL)
+    YYACCEPT;
+
   /* Count tokens shifted since error; after three, turn off error
      status.  */
   if (yyerrstatus)
     yyerrstatus--;
 
-  /* Shift the lookahead token.  */
+  /* Shift the look-ahead token.  */
   YY_SYMBOL_PRINT ("Shifting", yytoken, &yylval, &yylloc);
 
-  /* Discard the shifted token.  */
-  yychar = YYEMPTY;
+  /* Discard the shifted token unless it is eof.  */
+  if (yychar != YYEOF)
+    yychar = YYEMPTY;
 
   yystate = yyn;
   *++yyvsp = yylval;
@@ -1735,56 +1735,44 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-
-/* Line 1455 of yacc.c  */
-#line 31 "tiny.y"
-    {   savedName1 = copyString(tokenString); }
+#line 39 "tiny.y"
+    {   savedName1 = copyString(tokenString); ;}
     break;
 
   case 3:
-
-/* Line 1455 of yacc.c  */
-#line 33 "tiny.y"
+#line 41 "tiny.y"
     {   (yyval) = (yyvsp[(5) - (6)]);
                             (yyval)->attr.name=savedName1;
                             savedTree = (yyval);
-                        }
+                        ;}
     break;
 
   case 4:
-
-/* Line 1455 of yacc.c  */
-#line 38 "tiny.y"
+#line 46 "tiny.y"
     {
                             (yyval) = (yyvsp[(1) - (2)]);
                             (yyval)->sibling=(yyvsp[(2) - (2)]);
-                        }
+                        ;}
     break;
 
   case 5:
-
-/* Line 1455 of yacc.c  */
-#line 43 "tiny.y"
+#line 51 "tiny.y"
     {
                             (yyval) = newDeclNode(DECL_ROUTINEHEAD);
                             (yyval) ->child[0]=(yyvsp[(1) - (4)]);
                             (yyval) ->child[1]=(yyvsp[(2) - (4)]);
                             (yyval) ->child[2]=(yyvsp[(3) - (4)]);
                             (yyval) ->child[3]=(yyvsp[(4) - (4)]);
-                        }
+                        ;}
     break;
 
   case 6:
-
-/* Line 1455 of yacc.c  */
-#line 51 "tiny.y"
-    {   (yyval)= NULL;}
+#line 59 "tiny.y"
+    {   (yyval)= NULL;;}
     break;
 
   case 7:
-
-/* Line 1455 of yacc.c  */
-#line 53 "tiny.y"
+#line 61 "tiny.y"
     {   YYSTYPE t=(yyvsp[(1) - (2)]);
                             if(t!=NULL){
                                 while(t->sibling!=NULL)
@@ -1794,13 +1782,11 @@ yyreduce:
                             }
                             else
                                 (yyval)=(yyvsp[(2) - (2)]);
-                        }
+                        ;}
     break;
 
   case 8:
-
-/* Line 1455 of yacc.c  */
-#line 64 "tiny.y"
+#line 72 "tiny.y"
     {   YYSTYPE t=(yyvsp[(1) - (2)]);
                             if(t!=NULL){
                                 while(t->sibling!=NULL)
@@ -1810,75 +1796,59 @@ yyreduce:
                             }
                             else
                                 (yyval)=(yyvsp[(2) - (2)]);
-                        }
+                        ;}
     break;
 
   case 9:
-
-/* Line 1455 of yacc.c  */
-#line 74 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 82 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 10:
-
-/* Line 1455 of yacc.c  */
-#line 75 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 83 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 11:
-
-/* Line 1455 of yacc.c  */
-#line 78 "tiny.y"
+#line 86 "tiny.y"
     {
                             (yyval)=newDeclNode(DECL_FUNCTION);
                             (yyval)->attr.name=copyString( (yyvsp[(1) - (4)])->attr.name);
-			    printf("functional:%s",(yyvsp[(1) - (4)])->attr.name);
+			
                             (yyval)->child[0]=(yyvsp[(1) - (4)])->child[1];
                             (yyval)->child[1]=(yyvsp[(1) - (4)])->child[0];
-			    (yyval) ->child[2]=(yyvsp[(3) - (4)]);
-			    free((yyvsp[(1) - (4)]));
-                        }
+			    			(yyval)->child[2]=(yyvsp[(3) - (4)]);
+			    			free((yyvsp[(1) - (4)]));
+                        ;}
     break;
 
   case 12:
-
-/* Line 1455 of yacc.c  */
-#line 89 "tiny.y"
-    {   savedName=copyString(tokenString);}
+#line 97 "tiny.y"
+    {   savedName=copyString(tokenString);;}
     break;
 
   case 13:
-
-/* Line 1455 of yacc.c  */
-#line 91 "tiny.y"
+#line 99 "tiny.y"
     {
                             (yyval)=newDeclNode(DECL_FUNCTIONHEAD);
                             (yyval)->attr.name=savedName;
                             (yyval)->child[0]=(yyvsp[(4) - (6)]);
                             (yyval)->child[1]=(yyvsp[(6) - (6)]);
-                        }
+                        ;}
     break;
 
   case 14:
-
-/* Line 1455 of yacc.c  */
-#line 99 "tiny.y"
-    {(yyval)=NULL;}
+#line 107 "tiny.y"
+    {(yyval)=NULL;;}
     break;
 
   case 15:
-
-/* Line 1455 of yacc.c  */
-#line 101 "tiny.y"
-    {(yyval)=(yyvsp[(2) - (3)]);}
+#line 109 "tiny.y"
+    {(yyval)=(yyvsp[(2) - (3)]);;}
     break;
 
   case 16:
-
-/* Line 1455 of yacc.c  */
-#line 104 "tiny.y"
+#line 112 "tiny.y"
     {   YYSTYPE t=(yyvsp[(1) - (3)]);
                             if(t!=NULL){
                                 while(t->sibling!=NULL)
@@ -1888,87 +1858,69 @@ yyreduce:
                             }
                             else
                                 (yyval)=(yyvsp[(3) - (3)]);
-                        }
+                        ;}
     break;
 
   case 17:
-
-/* Line 1455 of yacc.c  */
-#line 115 "tiny.y"
-    {   (yyval)=(yyvsp[(1) - (1)]); }
+#line 123 "tiny.y"
+    {   (yyval)=(yyvsp[(1) - (1)]); ;}
     break;
 
   case 18:
-
-/* Line 1455 of yacc.c  */
-#line 118 "tiny.y"
+#line 126 "tiny.y"
     {
                             (yyval)=newDeclNode(DECL_VAR_PARA);
                             (yyval)->child[0]=(yyvsp[(2) - (4)]);
                             (yyval)->child[1]=(yyvsp[(4) - (4)]);
-                        }
+                        ;}
     break;
 
   case 19:
-
-/* Line 1455 of yacc.c  */
-#line 124 "tiny.y"
+#line 132 "tiny.y"
     {
                             (yyval)=newDeclNode(DECL_VAL_PARA);
                             (yyval)->child[0]=(yyvsp[(1) - (3)]);
                             (yyval)->child[1]=(yyvsp[(3) - (3)]);
-                        }
+                        ;}
     break;
 
   case 20:
-
-/* Line 1455 of yacc.c  */
-#line 131 "tiny.y"
+#line 139 "tiny.y"
     {
                             (yyval)=newDeclNode(DECL_PROCEDURE);
                             (yyval)->attr.name=copyString( (yyvsp[(1) - (4)])->attr.name);
                             (yyval)->child[0]=NULL;
                             (yyval)->child[1]=(yyvsp[(1) - (4)])->child[0];
-			    (yyval) ->child[2]=(yyvsp[(3) - (4)]);
+			    			(yyval)->child[2]=(yyvsp[(3) - (4)]);
                             free((yyvsp[(1) - (4)]));
-                        }
+                        ;}
     break;
 
   case 21:
-
-/* Line 1455 of yacc.c  */
-#line 141 "tiny.y"
-    {   savedName=copyString(tokenString);}
+#line 149 "tiny.y"
+    {   savedName=copyString(tokenString);;}
     break;
 
   case 22:
-
-/* Line 1455 of yacc.c  */
-#line 143 "tiny.y"
+#line 151 "tiny.y"
     {   (yyval)=newDeclNode(DECL_PROCEDUREHEAD);
                             (yyval)->attr.name=savedName;
                             (yyval)->child[0]=(yyvsp[(4) - (4)]);
-                        }
+                        ;}
     break;
 
   case 23:
-
-/* Line 1455 of yacc.c  */
-#line 149 "tiny.y"
-    {   (yyval) = NULL;}
+#line 157 "tiny.y"
+    {   (yyval) = NULL;;}
     break;
 
   case 24:
-
-/* Line 1455 of yacc.c  */
-#line 151 "tiny.y"
-    {   (yyval)=(yyvsp[(2) - (2)]);}
+#line 159 "tiny.y"
+    {   (yyval)=(yyvsp[(2) - (2)]);;}
     break;
 
   case 25:
-
-/* Line 1455 of yacc.c  */
-#line 154 "tiny.y"
+#line 162 "tiny.y"
     {   YYSTYPE t = (yyvsp[(1) - (2)]);
                             if(t!=NULL){
                                 while(t->sibling!=NULL)
@@ -1978,46 +1930,36 @@ yyreduce:
                             }
                             else
                                 (yyval)=(yyvsp[(2) - (2)]);
-                        }
+                        ;}
     break;
 
   case 26:
-
-/* Line 1455 of yacc.c  */
-#line 164 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 172 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 27:
-
-/* Line 1455 of yacc.c  */
-#line 167 "tiny.y"
+#line 175 "tiny.y"
     {   (yyval)=newDeclNode(DECL_VAR);
                             (yyval)->child[0]=(yyvsp[(1) - (4)]);
                             (yyval)->child[1]=(yyvsp[(3) - (4)]);
 
 
-                        }
+                        ;}
     break;
 
   case 28:
-
-/* Line 1455 of yacc.c  */
-#line 175 "tiny.y"
-    {   (yyval) = NULL; }
+#line 183 "tiny.y"
+    {   (yyval) = NULL; ;}
     break;
 
   case 29:
-
-/* Line 1455 of yacc.c  */
-#line 177 "tiny.y"
-    {   (yyval)=(yyvsp[(2) - (2)]); }
+#line 185 "tiny.y"
+    {   (yyval)=(yyvsp[(2) - (2)]); ;}
     break;
 
   case 30:
-
-/* Line 1455 of yacc.c  */
-#line 180 "tiny.y"
+#line 188 "tiny.y"
     {
                             YYSTYPE t = (yyvsp[(1) - (2)]);
                             if(t!=NULL){
@@ -2028,126 +1970,102 @@ yyreduce:
                             }
                             else
                                 (yyval)=(yyvsp[(1) - (2)]);
-                        }
+                        ;}
     break;
 
   case 31:
-
-/* Line 1455 of yacc.c  */
-#line 193 "tiny.y"
-    {   (yyval)=(yyvsp[(1) - (1)]); }
+#line 201 "tiny.y"
+    {   (yyval)=(yyvsp[(1) - (1)]); ;}
     break;
 
   case 32:
-
-/* Line 1455 of yacc.c  */
-#line 196 "tiny.y"
+#line 204 "tiny.y"
     {
                             (yyval) = newDeclNode(DECL_CONST);
                             (yyval)->attr.name = copyString((yyvsp[(1) - (4)])->attr.name);
                             freeNode((yyvsp[(1) - (4)]));
                             (yyval)->child[0] = (yyvsp[(3) - (4)]);
                             (yyval)->type=(yyvsp[(3) - (4)])->type;
-                        }
+                        ;}
     break;
 
   case 33:
-
-/* Line 1455 of yacc.c  */
-#line 205 "tiny.y"
+#line 213 "tiny.y"
     {
                             (yyval) = newExpNode(EXP_CONST);
                             (yyval)->type = EXPTYPE_INT;
                             (yyval)->attr.val = atoi(tokenString);
-                        }
+                        ;}
     break;
 
   case 34:
-
-/* Line 1455 of yacc.c  */
-#line 211 "tiny.y"
+#line 219 "tiny.y"
     {
                             (yyval) = newExpNode(EXP_CONST);
                             (yyval)->type = EXPTYPE_REAL;
                             (yyval)->attr.real_val = atof(tokenString);
-                        }
+                        ;}
     break;
 
   case 35:
-
-/* Line 1455 of yacc.c  */
-#line 217 "tiny.y"
+#line 225 "tiny.y"
     {
                             (yyval) = newExpNode(EXP_CONST);
                             (yyval)->type = EXPTYPE_CHAR;
                             (yyval)->attr.char_val = tokenString[1];
-                        }
+                        ;}
     break;
 
   case 36:
-
-/* Line 1455 of yacc.c  */
-#line 223 "tiny.y"
+#line 231 "tiny.y"
     {
                             (yyval) = newExpNode(EXP_CONST);
                             (yyval)->type=EXPTYPE_STRING;
                             (yyval)->attr.string_val = (char*)malloc(strlen(tokenString)-1);
                             memmove((yyval)->attr.string_val,tokenString+1,strlen(tokenString)-2);
                             (yyval)->attr.string_val[strlen(tokenString)-2]='\0';
-                        }
+                        ;}
     break;
 
   case 37:
-
-/* Line 1455 of yacc.c  */
-#line 231 "tiny.y"
+#line 239 "tiny.y"
     {
                             (yyval)=newExpNode(EXP_CONST);
                             (yyval)->type=EXPTYPE_BOOL;
                             (yyval)->attr.val=1;
-                        }
+                        ;}
     break;
 
   case 38:
-
-/* Line 1455 of yacc.c  */
-#line 237 "tiny.y"
+#line 245 "tiny.y"
     {
                             (yyval)=newExpNode(EXP_CONST);
                             (yyval)->type=EXPTYPE_BOOL;
                             (yyval)->attr.val=0;
-                        }
+                        ;}
     break;
 
   case 39:
-
-/* Line 1455 of yacc.c  */
-#line 243 "tiny.y"
+#line 251 "tiny.y"
     {
                             (yyval)=newExpNode(EXP_CONST);
                             (yyval)->type=EXPTYPE_INT;
                             (yyval)->attr.val=2147483647;
-                        }
+                        ;}
     break;
 
   case 40:
-
-/* Line 1455 of yacc.c  */
-#line 250 "tiny.y"
-    {   (yyval)=NULL;}
+#line 258 "tiny.y"
+    {   (yyval)=NULL;;}
     break;
 
   case 41:
-
-/* Line 1455 of yacc.c  */
-#line 252 "tiny.y"
-    {   (yyval)=(yyvsp[(2) - (2)]);}
+#line 260 "tiny.y"
+    {   (yyval)=(yyvsp[(2) - (2)]);;}
     break;
 
   case 42:
-
-/* Line 1455 of yacc.c  */
-#line 255 "tiny.y"
+#line 263 "tiny.y"
     {
                             YYSTYPE t=(yyvsp[(1) - (2)]);
                             if(t!=NULL){
@@ -2158,58 +2076,44 @@ yyreduce:
                             }
                             else
                               (yyval)=(yyvsp[(2) - (2)]);
-                        }
+                        ;}
     break;
 
   case 43:
-
-/* Line 1455 of yacc.c  */
-#line 267 "tiny.y"
-    {   (yyval)=(yyvsp[(1) - (1)]);}
+#line 275 "tiny.y"
+    {   (yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 44:
-
-/* Line 1455 of yacc.c  */
-#line 270 "tiny.y"
+#line 278 "tiny.y"
     {   (yyval)=newDeclNode(DECL_TYPE);
                             (yyval)->child[0]=(yyvsp[(1) - (4)]);
                             (yyval)->child[1]=(yyvsp[(3) - (4)]);
-                        }
+                        ;}
     break;
 
   case 45:
-
-/* Line 1455 of yacc.c  */
-#line 275 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 283 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 46:
-
-/* Line 1455 of yacc.c  */
-#line 276 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 284 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 47:
-
-/* Line 1455 of yacc.c  */
-#line 277 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 285 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 48:
-
-/* Line 1455 of yacc.c  */
-#line 280 "tiny.y"
-    {   (yyval)=(yyvsp[(2) - (3)]);}
+#line 288 "tiny.y"
+    {   (yyval)=(yyvsp[(2) - (3)]);;}
     break;
 
   case 49:
-
-/* Line 1455 of yacc.c  */
-#line 283 "tiny.y"
+#line 291 "tiny.y"
     {
                             YYSTYPE t=(yyvsp[(1) - (2)]);
                             if(t!=NULL){
@@ -2220,151 +2124,122 @@ yyreduce:
                             }
                             else
                               (yyval)=(yyvsp[(2) - (2)]);
-                        }
+                        ;}
     break;
 
   case 50:
-
-/* Line 1455 of yacc.c  */
-#line 294 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 302 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 51:
-
-/* Line 1455 of yacc.c  */
-#line 297 "tiny.y"
+#line 305 "tiny.y"
     {
                             (yyval)=newTypeNode(TYPE_RECORD);
                             (yyval)->child[0]=(yyvsp[(1) - (4)]);
                             (yyval)->child[1]=(yyvsp[(3) - (4)]);
-                        }
+                        ;}
     break;
 
   case 52:
-
-/* Line 1455 of yacc.c  */
-#line 304 "tiny.y"
+#line 312 "tiny.y"
     {
                             (yyval)=newTypeNode(TYPE_ARRAY);
                             (yyval)->child[0]=(yyvsp[(3) - (6)]);
                             (yyval)->child[1]=(yyvsp[(6) - (6)]);
                             (yyval)->type=EXPTYPE_ARRAY;
-                            printf("%d\n",(yyvsp[(6) - (6)])->type);
-                        }
+                         
+                        ;}
     break;
 
   case 53:
-
-/* Line 1455 of yacc.c  */
-#line 313 "tiny.y"
+#line 321 "tiny.y"
     {
                             (yyval)=newTypeNode(TYPE_SIMPLE_ID);
-			    printf("RUNNNNNNNNNN %s\n",(yyvsp[(1) - (1)])->attr.name);
                             (yyval)->attr.name = copyString((yyvsp[(1) - (1)])->attr.name);
                             free((yyvsp[(1) - (1)]));
-                        }
+                        ;}
     break;
 
   case 54:
-
-/* Line 1455 of yacc.c  */
-#line 320 "tiny.y"
+#line 327 "tiny.y"
     {   (yyval)=newTypeNode(TYPE_SIMPLE_ENUM);
                             (yyval)->child[0]=(yyvsp[(2) - (3)]);
-			    (yyval)->type=EXPTYPE_ENUM;
-                        }
+							(yyval)->type=EXPTYPE_ENUM;
+                        ;}
     break;
 
   case 55:
-
-/* Line 1455 of yacc.c  */
-#line 325 "tiny.y"
+#line 332 "tiny.y"
     {   (yyval)=newTypeNode(TYPE_SIMPLE_LIMIT);
                             (yyval)->child[0]=(yyvsp[(1) - (3)]);
                             (yyval)->child[1]=(yyvsp[(3) - (3)]);
-			    (yyval)->type=EXPTYPE_LIMIT;
-                        }
+							(yyval)->type=EXPTYPE_LIMIT;
+                        ;}
     break;
 
   case 56:
-
-/* Line 1455 of yacc.c  */
-#line 331 "tiny.y"
+#line 338 "tiny.y"
     {
                             (yyval)=newTypeNode(TYPE_SIMPLE_LIMIT);
                             (yyval)->child[0]=(yyvsp[(2) - (4)]);
                             (yyval)->child[0]->attr.val *= -1;
                             (yyval)->child[1]=(yyvsp[(4) - (4)]);
-			    (yyval)->type=EXPTYPE_LIMIT;
-                        }
+							(yyval)->type=EXPTYPE_LIMIT;
+                        ;}
     break;
 
   case 57:
-
-/* Line 1455 of yacc.c  */
-#line 339 "tiny.y"
+#line 346 "tiny.y"
     {   (yyval)=newTypeNode(TYPE_SIMPLE_LIMIT);
                             (yyval)->child[0]=(yyvsp[(2) - (5)]);
                             (yyval)->child[0]->attr.val *=-1;
                             (yyval)->child[1]=(yyvsp[(5) - (5)]);
                             (yyval)->child[1]->attr.val *=-1;
-			    (yyval)->type=EXPTYPE_LIMIT;
-                        }
+							(yyval)->type=EXPTYPE_LIMIT;
+                        ;}
     break;
 
   case 58:
-
-/* Line 1455 of yacc.c  */
-#line 347 "tiny.y"
+#line 354 "tiny.y"
     {
                             (yyval)=newTypeNode(TYPE_SIMPLE_LIMIT);
                             (yyval)->child[0]=(yyvsp[(1) - (3)]);
                             (yyval)->child[1]=(yyvsp[(3) - (3)]);
-			    (yyval)->type=EXPTYPE_LIMIT;
-                        }
+							(yyval)->type=EXPTYPE_LIMIT;
+                        ;}
     break;
 
   case 59:
-
-/* Line 1455 of yacc.c  */
-#line 354 "tiny.y"
+#line 361 "tiny.y"
     {   (yyval)=newTypeNode(TYPE_SIMPLE_SYS);
                             (yyval)->type=EXPTYPE_INT;
-                        }
+                        ;}
     break;
 
   case 60:
-
-/* Line 1455 of yacc.c  */
-#line 358 "tiny.y"
+#line 365 "tiny.y"
     {   (yyval)=newTypeNode(TYPE_SIMPLE_SYS);
                             (yyval)->type=EXPTYPE_BOOL;
-                        }
+                        ;}
     break;
 
   case 61:
-
-/* Line 1455 of yacc.c  */
-#line 362 "tiny.y"
+#line 369 "tiny.y"
     {   (yyval)=newTypeNode(TYPE_SIMPLE_SYS);
                             (yyval)->type=EXPTYPE_REAL;
-                        }
+                        ;}
     break;
 
   case 62:
-
-/* Line 1455 of yacc.c  */
-#line 366 "tiny.y"
+#line 373 "tiny.y"
     {   (yyval)=newTypeNode(TYPE_SIMPLE_SYS);
                             (yyval)->type=EXPTYPE_CHAR;
-                        }
+                        ;}
     break;
 
   case 63:
-
-/* Line 1455 of yacc.c  */
-#line 371 "tiny.y"
+#line 378 "tiny.y"
     {
                             YYSTYPE t=(yyvsp[(1) - (3)]);
                             if(t!=NULL){
@@ -2375,50 +2250,38 @@ yyreduce:
                             }
                             else
                                 (yyval)=(yyvsp[(1) - (3)]);
-                        }
+                        ;}
     break;
 
   case 64:
-
-/* Line 1455 of yacc.c  */
-#line 382 "tiny.y"
-    {   (yyval)=(yyvsp[(1) - (1)]); }
+#line 389 "tiny.y"
+    {   (yyval)=(yyvsp[(1) - (1)]); ;}
     break;
 
   case 65:
-
-/* Line 1455 of yacc.c  */
-#line 385 "tiny.y"
+#line 392 "tiny.y"
     {   (yyval)=newExpNode(EXP_ID);
                             (yyval)->attr.name=copyString(tokenString);
-                        }
+                        ;}
     break;
 
   case 66:
-
-/* Line 1455 of yacc.c  */
-#line 388 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 395 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 67:
-
-/* Line 1455 of yacc.c  */
-#line 389 "tiny.y"
-    {(yyval)=(yyvsp[(2) - (3)]);}
+#line 396 "tiny.y"
+    {(yyval)=(yyvsp[(2) - (3)]);;}
     break;
 
   case 68:
-
-/* Line 1455 of yacc.c  */
-#line 391 "tiny.y"
-    {(yyval)=NULL;}
+#line 398 "tiny.y"
+    {(yyval)=NULL;;}
     break;
 
   case 69:
-
-/* Line 1455 of yacc.c  */
-#line 393 "tiny.y"
+#line 400 "tiny.y"
     {
                             YYSTYPE t=(yyvsp[(1) - (3)]);
                             if(t!=NULL){
@@ -2429,112 +2292,84 @@ yyreduce:
                             }
                             else
                                 (yyval)=(yyvsp[(2) - (3)]);
-                        }
+                        ;}
     break;
 
   case 70:
-
-/* Line 1455 of yacc.c  */
-#line 406 "tiny.y"
-    {   savedNum= atoi(tokenString);}
+#line 413 "tiny.y"
+    {   savedNum= atoi(tokenString);;}
     break;
 
   case 71:
-
-/* Line 1455 of yacc.c  */
-#line 408 "tiny.y"
+#line 415 "tiny.y"
     {
                             (yyval)=newStmtNode(STMT_LABEL);
                             (yyval)->attr.val=savedNum;
                             (yyval)->child[0]=(yyvsp[(4) - (4)]);
-                        }
+                        ;}
     break;
 
   case 72:
-
-/* Line 1455 of yacc.c  */
-#line 414 "tiny.y"
-    {   (yyval)=(yyvsp[(1) - (1)]);}
+#line 421 "tiny.y"
+    {   (yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 73:
-
-/* Line 1455 of yacc.c  */
-#line 416 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 423 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 74:
-
-/* Line 1455 of yacc.c  */
-#line 417 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 424 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 75:
-
-/* Line 1455 of yacc.c  */
-#line 418 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 425 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 76:
-
-/* Line 1455 of yacc.c  */
-#line 419 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 426 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 77:
-
-/* Line 1455 of yacc.c  */
-#line 420 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 427 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 78:
-
-/* Line 1455 of yacc.c  */
-#line 421 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 428 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 79:
-
-/* Line 1455 of yacc.c  */
-#line 422 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 429 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 80:
-
-/* Line 1455 of yacc.c  */
-#line 423 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 430 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 81:
-
-/* Line 1455 of yacc.c  */
-#line 424 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 431 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 82:
-
-/* Line 1455 of yacc.c  */
-#line 426 "tiny.y"
+#line 433 "tiny.y"
     {   (yyval)=newExpNode(EXP_OP);
 			    (yyval)->attr.op = TOKEN_ASSIGN;	  
 			    (yyval)->child[0] = (yyvsp[(1) - (3)]);
 			    (yyval)->child[1] = (yyvsp[(3) - (3)]);
-                        }
+                        ;}
     break;
 
   case 83:
-
-/* Line 1455 of yacc.c  */
-#line 432 "tiny.y"
+#line 439 "tiny.y"
     {  (yyval)=newExpNode(EXP_OP);
 			   (yyval)->attr.op = TOKEN_ASSIGN;
 			   (yyvsp[(1) - (6)])->type = EXPTYPE_ARRAY;
@@ -2542,78 +2377,62 @@ yyreduce:
 			   (yyval)->child[0] = (yyvsp[(1) - (6)]);
                            (yyval)->child[1] = (yyvsp[(6) - (6)]);
 			  		
-			}
+			;}
     break;
 
   case 84:
-
-/* Line 1455 of yacc.c  */
-#line 442 "tiny.y"
+#line 449 "tiny.y"
     {   (yyval)=newStmtNode(STMT_GOTO);
                             (yyval)->attr.val=atoi(tokenString);
-                        }
+                        ;}
     break;
 
   case 85:
-
-/* Line 1455 of yacc.c  */
-#line 447 "tiny.y"
+#line 454 "tiny.y"
     {   (yyval)=newStmtNode(STMT_IF);
                             (yyval)->child[0]=(yyvsp[(2) - (5)]);
                             (yyval)->child[1]=(yyvsp[(4) - (5)]);
                             (yyval)->child[2]=(yyvsp[(5) - (5)]);
-                        }
+                        ;}
     break;
 
   case 86:
-
-/* Line 1455 of yacc.c  */
-#line 453 "tiny.y"
-    {(yyval)=NULL;}
+#line 460 "tiny.y"
+    {(yyval)=NULL;;}
     break;
 
   case 87:
-
-/* Line 1455 of yacc.c  */
-#line 454 "tiny.y"
-    {(yyval)=(yyvsp[(2) - (2)]);}
+#line 461 "tiny.y"
+    {(yyval)=(yyvsp[(2) - (2)]);;}
     break;
 
   case 88:
-
-/* Line 1455 of yacc.c  */
-#line 457 "tiny.y"
+#line 464 "tiny.y"
     {
                             (yyval)=newStmtNode(STMT_REPEAT);
                             (yyval)->child[0]=(yyvsp[(2) - (4)]);
                             (yyval)->child[1]=(yyvsp[(4) - (4)]);
-                        }
+                        ;}
     break;
 
   case 90:
-
-/* Line 1455 of yacc.c  */
-#line 464 "tiny.y"
+#line 471 "tiny.y"
     {   (yyval)=newStmtNode(STMT_WHILE);
                             (yyval)->child[0]=(yyvsp[(2) - (4)]);
                             (yyval)->child[1]=(yyvsp[(4) - (4)]);
-                        }
+                        ;}
     break;
 
   case 91:
-
-/* Line 1455 of yacc.c  */
-#line 469 "tiny.y"
+#line 476 "tiny.y"
     {   (yyval)=newStmtNode(STMT_CASE);
                             (yyval)->child[0]=(yyvsp[(2) - (5)]);
                             (yyval)->child[1]=(yyvsp[(4) - (5)]);
-                        }
+                        ;}
     break;
 
   case 92:
-
-/* Line 1455 of yacc.c  */
-#line 474 "tiny.y"
+#line 481 "tiny.y"
     {   YYSTYPE t=(yyvsp[(1) - (2)]);
                             if(t!=NULL){
                                 while(t->sibling!=NULL)
@@ -2623,42 +2442,34 @@ yyreduce:
                             }
                             else
                                 (yyval)=(yyvsp[(2) - (2)]);
-                        }
+                        ;}
     break;
 
   case 93:
-
-/* Line 1455 of yacc.c  */
-#line 484 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 491 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 94:
-
-/* Line 1455 of yacc.c  */
-#line 486 "tiny.y"
+#line 493 "tiny.y"
     {
                             (yyval)=newExpNode(EXP_CASE);
                             (yyval)->child[0]=(yyvsp[(1) - (4)]);
                             (yyval)->child[1]=(yyvsp[(3) - (4)]);
-                        }
+                        ;}
     break;
 
   case 95:
-
-/* Line 1455 of yacc.c  */
-#line 492 "tiny.y"
+#line 499 "tiny.y"
     {
                             (yyval)=newExpNode(EXP_CASE);
                             (yyval)->child[0]=(yyvsp[(1) - (4)]);
                             (yyval)->child[1]=(yyvsp[(3) - (4)]);
-                        }
+                        ;}
     break;
 
   case 96:
-
-/* Line 1455 of yacc.c  */
-#line 498 "tiny.y"
+#line 505 "tiny.y"
     {
                             (yyval)=newStmtNode(STMT_FOR);
                             (yyval)->child[0]=(yyvsp[(2) - (8)]);
@@ -2666,13 +2477,11 @@ yyreduce:
                             (yyval)->child[2]=(yyvsp[(6) - (8)]);
                             (yyval)->child[3]=(yyvsp[(8) - (8)]);
                             (yyval)->attr.op=TOKEN_TO;
-                        }
+                        ;}
     break;
 
   case 97:
-
-/* Line 1455 of yacc.c  */
-#line 507 "tiny.y"
+#line 514 "tiny.y"
     {
                             (yyval)=newStmtNode(STMT_FOR);
                             (yyval)->child[0]=(yyvsp[(2) - (8)]);
@@ -2680,77 +2489,63 @@ yyreduce:
                             (yyval)->child[2]=(yyvsp[(6) - (8)]);
                             (yyval)->child[3]=(yyvsp[(8) - (8)]);
                             (yyval)->attr.op=TOKEN_DOWNTO;
-                        }
+                        ;}
     break;
 
   case 98:
-
-/* Line 1455 of yacc.c  */
-#line 516 "tiny.y"
+#line 523 "tiny.y"
     {
 							(yyval)=newExpNode(EXP_FUNC);
                             (yyval)->attr.name=copyString((yyvsp[(1) - (1)])->attr.name);
                             (yyval)->child[0]=(yyvsp[(1) - (1)]);
 							(yyval)->child[1]=NULL;
-                        }
+                        ;}
     break;
 
   case 99:
-
-/* Line 1455 of yacc.c  */
-#line 523 "tiny.y"
+#line 530 "tiny.y"
     {   (yyval)=newExpNode(EXP_FUNC);
                             (yyval)->attr.name=copyString((yyvsp[(1) - (4)])->attr.name);
                             (yyval)->child[0]=(yyvsp[(1) - (4)]);
 			    (yyval)->child[1]=(yyvsp[(3) - (4)]);
 							
-                        }
+                        ;}
     break;
 
   case 100:
-
-/* Line 1455 of yacc.c  */
-#line 530 "tiny.y"
+#line 537 "tiny.y"
     {
                             (yyval)=newStmtNode(STMT_PROC_SYS);
                             (yyval)->attr.op=TOKEN_READ;
                             (yyval)->child[0]=(yyvsp[(3) - (4)]);
-                        }
+                        ;}
     break;
 
   case 101:
-
-/* Line 1455 of yacc.c  */
-#line 536 "tiny.y"
+#line 543 "tiny.y"
     {   (yyval)=newStmtNode(STMT_PROC_SYS);
                             (yyval)->attr.op=TOKEN_WRITE;
                             (yyval)->child[1]=(yyvsp[(3) - (4)]);
-                        }
+                        ;}
     break;
 
   case 102:
-
-/* Line 1455 of yacc.c  */
-#line 541 "tiny.y"
+#line 548 "tiny.y"
     {   (yyval)=newStmtNode(STMT_PROC_SYS);
                             (yyval)->attr.op=TOKEN_WRITELN;
-                        }
+                        ;}
     break;
 
   case 103:
-
-/* Line 1455 of yacc.c  */
-#line 545 "tiny.y"
+#line 552 "tiny.y"
     {   (yyval)=newStmtNode(STMT_PROC_SYS);
                             (yyval)->attr.op=TOKEN_WRITELN;
                             (yyval)->child[1]=(yyvsp[(3) - (4)]);
-                        }
+                        ;}
     break;
 
   case 104:
-
-/* Line 1455 of yacc.c  */
-#line 550 "tiny.y"
+#line 557 "tiny.y"
     {   YYSTYPE t=(yyvsp[(1) - (3)]);
                             if(t!=NULL){
                                 while(t->sibling!=NULL)
@@ -2760,199 +2555,148 @@ yyreduce:
                             }
                             else
                                 (yyval)=(yyvsp[(3) - (3)]);
-                        }
+                        ;}
     break;
 
   case 105:
-
-/* Line 1455 of yacc.c  */
-#line 560 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 567 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 106:
-
-/* Line 1455 of yacc.c  */
-#line 562 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_GE); }
+#line 569 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_GE); ;}
     break;
 
   case 107:
-
-/* Line 1455 of yacc.c  */
-#line 563 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_GT); }
+#line 570 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_GT); ;}
     break;
 
   case 108:
-
-/* Line 1455 of yacc.c  */
-#line 564 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_LE); }
+#line 571 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_LE); ;}
     break;
 
   case 109:
-
-/* Line 1455 of yacc.c  */
-#line 565 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_LT); }
+#line 572 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_LT); ;}
     break;
 
   case 110:
-
-/* Line 1455 of yacc.c  */
-#line 566 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_EQUAL); }
+#line 573 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_EQUAL); ;}
     break;
 
   case 111:
-
-/* Line 1455 of yacc.c  */
-#line 567 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_UNEQUAL); }
+#line 574 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_UNEQUAL); ;}
     break;
 
   case 112:
-
-/* Line 1455 of yacc.c  */
-#line 568 "tiny.y"
-    {   (yyval)=(yyvsp[(1) - (1)]);}
+#line 575 "tiny.y"
+    {   (yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 113:
-
-/* Line 1455 of yacc.c  */
-#line 570 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_PLUS); }
+#line 577 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_PLUS); ;}
     break;
 
   case 114:
-
-/* Line 1455 of yacc.c  */
-#line 571 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_MINUS); }
+#line 578 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_MINUS); ;}
     break;
 
   case 115:
-
-/* Line 1455 of yacc.c  */
-#line 572 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_OR); }
+#line 579 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_OR); ;}
     break;
 
   case 116:
-
-/* Line 1455 of yacc.c  */
-#line 573 "tiny.y"
-    {   (yyval)=(yyvsp[(1) - (1)]);}
+#line 580 "tiny.y"
+    {   (yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 117:
-
-/* Line 1455 of yacc.c  */
-#line 575 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_MUL); }
+#line 582 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_MUL); ;}
     break;
 
   case 118:
-
-/* Line 1455 of yacc.c  */
-#line 576 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_DIV); }
+#line 583 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_DIV); ;}
     break;
 
   case 119:
-
-/* Line 1455 of yacc.c  */
-#line 577 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_MOD); }
+#line 584 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_MOD); ;}
     break;
 
   case 120:
-
-/* Line 1455 of yacc.c  */
-#line 578 "tiny.y"
-    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_AND); }
+#line 585 "tiny.y"
+    {   (yyval)=newOpExpNode((yyvsp[(1) - (3)]),(yyvsp[(3) - (3)]),TOKEN_AND); ;}
     break;
 
   case 121:
-
-/* Line 1455 of yacc.c  */
-#line 579 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 586 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 122:
-
-/* Line 1455 of yacc.c  */
-#line 582 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 589 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 123:
-
-/* Line 1455 of yacc.c  */
-#line 584 "tiny.y"
+#line 591 "tiny.y"
     {   (yyval)=newExpNode(EXP_FUNC);
                             (yyval)->attr.name=copyString((yyvsp[(1) - (4)])->attr.name);
                             (yyval)->child[1]=(yyvsp[(3) - (4)]);
-                        }
+                        ;}
     break;
 
   case 124:
-
-/* Line 1455 of yacc.c  */
-#line 588 "tiny.y"
-    {(yyval)=(yyvsp[(1) - (1)]);}
+#line 595 "tiny.y"
+    {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
   case 125:
-
-/* Line 1455 of yacc.c  */
-#line 589 "tiny.y"
-    {(yyval)=(yyvsp[(2) - (3)]);}
+#line 596 "tiny.y"
+    {(yyval)=(yyvsp[(2) - (3)]);;}
     break;
 
   case 126:
-
-/* Line 1455 of yacc.c  */
-#line 591 "tiny.y"
+#line 598 "tiny.y"
     {   (yyval)=newOpExpNode((yyvsp[(2) - (2)]),NULL,TOKEN_NOT);
-                        }
+                        ;}
     break;
 
   case 127:
-
-/* Line 1455 of yacc.c  */
-#line 594 "tiny.y"
+#line 601 "tiny.y"
     {   (yyval)=newOpExpNode((yyvsp[(2) - (2)]),NULL,TOKEN_MINUS);
-                        }
+                        ;}
     break;
 
   case 128:
-
-/* Line 1455 of yacc.c  */
-#line 597 "tiny.y"
+#line 604 "tiny.y"
     {   (yyval)=(yyvsp[(1) - (4)]);
                             (yyval)->child[0]=(yyvsp[(3) - (4)]);
                             (yyval)->type=EXPTYPE_ARRAY;
-                        }
+                        ;}
     break;
 
   case 129:
-
-/* Line 1455 of yacc.c  */
-#line 602 "tiny.y"
+#line 609 "tiny.y"
     {   (yyval)=(yyvsp[(1) - (3)]);
                             (yyval)->child[0]=(yyvsp[(3) - (3)]);
                             (yyval)->type=EXPTYPE_RECORD;
-                        }
+                        ;}
     break;
 
 
-
-/* Line 1455 of yacc.c  */
-#line 2956 "y.tab.c"
+/* Line 1267 of yacc.c.  */
+#line 2700 "tiny.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -2962,6 +2706,7 @@ yyreduce:
   YY_STACK_PRINT (yyss, yyssp);
 
   *++yyvsp = yyval;
+
 
   /* Now `shift' the result of the reduction.  Determine what state
      that goes to, based on the state we popped back to and the rule
@@ -3027,7 +2772,7 @@ yyerrlab:
 
   if (yyerrstatus == 3)
     {
-      /* If just tried and failed to reuse lookahead token after an
+      /* If just tried and failed to reuse look-ahead token after an
 	 error, discard it.  */
 
       if (yychar <= YYEOF)
@@ -3044,7 +2789,7 @@ yyerrlab:
 	}
     }
 
-  /* Else will try to reuse lookahead token after shifting the error
+  /* Else will try to reuse look-ahead token after shifting the error
      token.  */
   goto yyerrlab1;
 
@@ -3101,6 +2846,9 @@ yyerrlab1:
       YY_STACK_PRINT (yyss, yyssp);
     }
 
+  if (yyn == YYFINAL)
+    YYACCEPT;
+
   *++yyvsp = yylval;
 
 
@@ -3125,7 +2873,7 @@ yyabortlab:
   yyresult = 1;
   goto yyreturn;
 
-#if !defined(yyoverflow) || YYERROR_VERBOSE
+#ifndef yyoverflow
 /*-------------------------------------------------.
 | yyexhaustedlab -- memory exhaustion comes here.  |
 `-------------------------------------------------*/
@@ -3136,7 +2884,7 @@ yyexhaustedlab:
 #endif
 
 yyreturn:
-  if (yychar != YYEMPTY)
+  if (yychar != YYEOF && yychar != YYEMPTY)
      yydestruct ("Cleanup: discarding lookahead",
 		 yytoken, &yylval);
   /* Do not reclaim the symbols of the rule which action triggered
@@ -3162,21 +2910,24 @@ yyreturn:
 }
 
 
-
-/* Line 1675 of yacc.c  */
-#line 607 "tiny.y"
+#line 614 "tiny.y"
 
 
-int yyerror(char* message){
-    fprintf(listing, "Syntax error at line %d: %s\n",lineno,message);
-   // printToken(yychar, tokenString);
-    return 0;
+void yyerror(const char* s, ...){
+    
+    va_list ap;
+    va_start(ap, s);	
+    fprintf(stderr, "line %d: error near '%s': ", yylineno, yytext);
+    
+    vfprintf(stderr, s, ap);
+    fprintf(stderr, "\n");
+    va_end(ap);
 }
 
 
-TreeNode * parse(){
+TreeNode * parse()
+{
     yyparse();
     return savedTree;
-
 }
 

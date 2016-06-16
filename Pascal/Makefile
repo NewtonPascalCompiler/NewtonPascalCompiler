@@ -2,15 +2,17 @@
 #	flex tiny.l
 #	yacc -d tiny.y
 #	gcc util.c lex.yy.c y.tab.c main.c -lfl -o a.out
-complier: main.o util.o lex.yy.o symtab.o CodeGenerater.o
-	cc main.o util.o lex.yy.o symtab.o CodeGenerater.o -LS -o compiler
+complier: main.o util.o lex.yy.o symtab.o CodeGenerater.o tiny.tab.o
+	gcc main.o util.o lex.yy.o symtab.o CodeGenerater.o tiny.tab.o -o compiler
 util.o: util.c util.h global.h
-	cc -c util.c
+	gcc -c util.c
 lex.yy.o: lex.yy.c util.h global.h
-	cc -c lex.yy.c
+	gcc -c lex.yy.c
 main.o: main.c global.h util.h
-	cc -c main.c
+	gcc -c main.c
 CodeGenerater.o: CodeGenerater.c CodeGenerater.h global.h symtab.h
-	cc -c CodeGenerater.c
+	gcc -c CodeGenerater.c
 symtab.o: symtab.c symtab.h util.h global.h
-	cc -c symtab.c
+	gcc -c symtab.c
+tiny.tab.o: tiny.tab.c tiny.tab.h
+	gcc -c tiny.tab.c
