@@ -24,7 +24,7 @@ start:
 mov esi, ebp
 push ebp
 mov ebp, esp
-call yu
+call lu
 pop ebp
 invoke    ExitProcess,NULL
 
@@ -57,8 +57,7 @@ input_real:
    ret
 
 
-
-gg:
+ff:
 push ebp
 mov ebp, esp
 mov esi, ss:[ebp+0]
@@ -66,51 +65,62 @@ mov esi, ss:[ebp+0]
 mov edi, 8
 mov eax, ss:[ebp+edi] 
 push eax
+mov eax, 0
+mov ebx, eax
+pop eax
+cmp eax, ebx
+mov eax, 0
+setg al
+
+cmp eax, 1
+je __CG__label0		; If equal Jump to taken-content; 
+jmp __CG__label1		; Jump to NotTake Content
+__CG__label0: 
+mov edi, 8
+mov eax, ss:[ebp+edi] 
+push eax
 call output
 pop  eax
+
+
+mov edi, -16
+mov eax, ss:[esi+edi] 
+push eax
+;call function
+;function parameter start
+mov edi, 8
+mov eax, ss:[ebp+edi] 
+push eax
+mov eax, 1
+mov ebx, eax
+pop eax
+sub eax, ebx
+push eax		; push the parameter
+;function parameter end
+call ff
+pop ebx		;pop parameter in order to banlance the stack
+push eax
+mov edi, 8
+mov eax, ss:[ebp+edi] 
+mov ebx, eax
+pop eax
+add eax, ebx
+mov ebx, eax
+pop eax
+mov edi, -16
+mov eax, ebx
+mov ss:[esi+edi], eax
+
+jmp __CG__label2		; Jump to The if exit Label
+__CG__label1: 
+__CG__label2: 
 
 
 add esp, 0
 pop ebp
 ret
 
-ff:
-push ebp
-mov ebp, esp
-mov esi, ss:[ebp+0]
-sub esp, 4		;Allocate Varable space
-
-mov edi, -4
-mov eax, ss:[ebp+edi] 
-push eax
-mov eax, 23
-mov ebx, eax
-pop eax
-mov edi, -4
-mov eax, ebx
-mov ss:[ebp+edi], eax
-
-mov edi, -4
-mov eax, ss:[esi+edi] 
-push eax
-call output
-pop  eax
-
-
-;call function
-;function parameter start
-mov edi, -4
-mov eax, ss:[ebp+edi] 
-push eax		; push the parameter
-;function parameter end
-call gg
-pop ebx		;pop parameter in order to banlance the stack
-
-add esp, 4
-pop ebp
-ret
-
-yu:
+lu:
 push ebp
 mov ebp, esp
 mov esi, ss:[ebp+0]
@@ -119,13 +129,16 @@ sub esp, 12		;Allocate Varable space
 mov edi, -4
 mov eax, ss:[ebp+edi] 
 push eax
-mov eax, 34
+mov eax, 5
 mov ebx, eax
 pop eax
 mov edi, -4
 mov eax, ebx
 mov ss:[ebp+edi], eax
 
+mov edi, -8
+mov eax, ss:[ebp+edi] 
+push eax
 ;call function
 ;function parameter start
 mov edi, -4
@@ -134,6 +147,18 @@ push eax		; push the parameter
 ;function parameter end
 call ff
 pop ebx		;pop parameter in order to banlance the stack
+mov ebx, eax
+pop eax
+mov edi, -8
+mov eax, ebx
+mov ss:[ebp+edi], eax
+
+mov edi, -8
+mov eax, ss:[ebp+edi] 
+push eax
+call output
+pop  eax
+
 
 add esp, 12
 pop ebp

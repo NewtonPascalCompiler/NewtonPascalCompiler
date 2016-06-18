@@ -1,5 +1,5 @@
 	1: reserved word: program
-	1: ID name=yu
+	1: ID name=lu
 	1: ;
 	2: reserved word: var
 	2: ID name=x
@@ -10,62 +10,58 @@
 	2: :
 	2: TYPE, name=integer
 	2: ;
-	3: reserved word: function
-	3: ID name=ff
-	3: (
-	3: ID name=u
-	3: :
-	3: TYPE, name=integer
-	3: )
-	3: :
-	3: TYPE, name=integer
-	3: ;
-	4: reserved word: var
-	4: ID name=n
+	4: reserved word: function
+	4: ID name=ff
+	4: (
+	4: ID name=u
+	4: :
+	4: TYPE, name=integer
+	4: )
 	4: :
 	4: TYPE, name=integer
 	4: ;
-	5: reserved word: procedure
-	5: ID name=gg
-	5: (
-	5: ID name=m
-	5: :
-	5: TYPE, name=integer
-	5: )
-	5: ;
-	6: reserved word: begin
-	7: write
-	7: (
-	7: ID name=m
-	7: )
-	7: ;
-	8: reserved word: end
-	8: ;
-	9: reserved word: begin
-	10: ID name=n
+	5: reserved word: begin
+	7: reserved word: if
+	7: ID name=u
+	7: >>
+	7: INT, val=0
+	7: reserved word: then
+	8: reserved word: begin
+	9: writeln
+	9: (
+	9: ID name=u
+	9: )
+	9: ;
+	10: ID name=ff
 	10: Unknown token::=
-	10: INT, val=23
+	10: ID name=ff
+	10: (
+	10: ID name=u
+	10: -
+	10: INT, val=1
+	10: )
+	10: +
+	10: ID name=u
 	10: ;
-	11: write
-	11: (
-	11: ID name=x
-	11: )
+	11: reserved word: end
 	11: ;
-	12: ID name=gg
-	12: (
-	12: ID name=n
-	12: )
+	12: reserved word: end
 	12: ;
-	13: reserved word: end
-	13: ;
-	14: reserved word: begin
-	15: ID name=x
+	13: reserved word: begin
+	14: ID name=x
+	14: Unknown token::=
+	14: INT, val=5
+	14: ;
+	15: ID name=y
 	15: Unknown token::=
-	15: INT, val=34
+	15: ID name=ff
+	15: (
+	15: ID name=x
+	15: )
 	15: ;
-	16: ID name=ff
+	16: writeln
 	16: (
-	16: ID name=x
+	16: ID name=y
 	16: )
 	16: ;
 	17: reserved word: end
@@ -83,40 +79,33 @@
                 Exp ID: u
                 type integer
             Routine Head
-                Var Declare:
-                    Exp ID: n
-                    type integer
-                Declare Procedure
-                    val parameters:
-                        Exp ID: m
-                        type integer
-                    Routine Head
-                    system procedure:write
-                        Exp ID: m
-            EXP op: Unknown token:
-                Exp ID: n
-                const int:23
-            system procedure:write
-                Exp ID: x
-            Unknown Expression type
-                Exp ID: gg
-                Exp ID: n
+            if
+                EXP op: >
+                    Exp ID: u
+                    const int:0
+                system procedure:writeln
+                    Exp ID: u
+                EXP op: Unknown token:
+                    Exp ID: ff
+                    EXP op: +
+                        Unknown Expression type
+                            EXP op: -
+                                Exp ID: u
+                                const int:1
+                        Exp ID: u
     EXP op: Unknown token:
         Exp ID: x
-        const int:34
-    Unknown Expression type
-        Exp ID: ff
-        Exp ID: x
+        const int:5
+    EXP op: Unknown token:
+        Exp ID: y
+        Unknown Expression type
+            Exp ID: x
+    system procedure:writeln
+        Exp ID: y
 unknown node kind.
 unknown node kind.
 unknown node kind.
-unknown node kind.
-Function Name:gg            
-m               0         
 unknown node kind.
 Function Name:ff            
-n               4         
 u               0         
-gg              8         
-Function Name:gg            
-  m               0         
+unknown node kind.

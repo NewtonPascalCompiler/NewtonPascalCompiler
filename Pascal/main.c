@@ -45,11 +45,11 @@ int main(int argc, char **argv)
         //return 1;
     }
     
-    printf("Begin Coding: \n");
+    //printf("Begin Coding: \n");
     BuildCode(syntaxTree);
     // printf("The SymTab is :\n");
     // printSymTab();
-	printf("End Coding: \n");
+	//printf("End Coding: \n");
 
 	fclose(listing);
 	

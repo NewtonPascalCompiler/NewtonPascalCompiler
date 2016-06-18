@@ -405,7 +405,7 @@ void GExpOpCode_real(TreeNode* pnode){
 	}
 	else {*/
         pnode->type = pnode->child[1]->type;
-        printf("in op_real, %d   %d\n",pnode->type,pnode->child[1]->type);
+        //printf("in op_real, %d   %d\n",pnode->type,pnode->child[1]->type);
 		switch(pnode->attr.op)
 		{
 		case TOKEN_PLUS:

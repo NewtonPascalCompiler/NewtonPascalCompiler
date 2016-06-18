@@ -3,6 +3,7 @@ var i: integer;
 a:array [5..10] of real;
 t: real;
 begin
+  alweew
   a[5] := 1.0;
   a[6] := 2.0;
   a[7] := 3.0;
