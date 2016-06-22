@@ -538,7 +538,7 @@ void GExpOpCode(TreeNode* pnode)
                             ++count;
                         --count;
                         char shift[30];
-                        sprintf(shift, "shl ebx, %d\n", count);
+                        sprintf(shift, "shl eax, %d\n", count);
                         strcat(code, shift);
                     }
                     else
@@ -557,7 +557,7 @@ void GExpOpCode(TreeNode* pnode)
                             ++count;
                         --count;
                         char shift[30];
-                        sprintf(shift, "shl ebx, %d\n", count);
+                        sprintf(shift, "shl eax, %d\n", count);
                         strcat(code, shift);
                     }
                     else
@@ -567,7 +567,28 @@ void GExpOpCode(TreeNode* pnode)
                     strcat(code, "xor edx, edx\ndiv ebx\n");
 			break;
 		case TOKEN_MOD:
-			strcat(code, "xor edx, edx\ndiv ebx\nmov eax, edx\n");
+                if (pnode->child[1]->kind.exp == EXP_CONST) {
+                    int val = pnode->child[1]->attr.val;
+                    //pow 2
+                    if ((val & (val - 1)) == 0) {
+                        int count = 0;
+                        while (val >> count != 0)
+                            ++count;
+                        --count;
+                        
+                        int i, offset = 0;
+                        for (i = 0; i < count; i++) {
+                            offset = (offset << 1) | 0x01;
+                        }
+                        char shift[30];
+                        sprintf(shift, "and eax, %d\n", offset);
+                        strcat(code, shift);
+                    }
+                    else
+                        strcat(code, "xor edx, edx\ndiv ebx\nmov eax, edx\n");
+                }
+                else
+                    strcat(code, "xor edx, edx\ndiv ebx\nmov eax, edx\n");
 			break;
 		case TOKEN_AND:
 			strcat(code, "and eax, ebx\n");

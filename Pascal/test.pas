@@ -1,5 +1,9 @@
 program yu;
-var x, y: integer;
+
+type ARR = array [0..100] of integer;
+var n,m :ARR;
+i:integer;
 begin
-    y := x * 8;
+  for i := 0 to 100 do
+    m[i] := n[i];
 end.

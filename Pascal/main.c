@@ -42,7 +42,7 @@ int main(int argc, char **argv)
     
     if (syntaxTree == NULL) {
         printf("由于前面的错误，编译无法进行。\n");
-        //return 1;
+        return 1;
     }
     
     //printf("Begin Coding: \n");
