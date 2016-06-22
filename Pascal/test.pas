@@ -1,17 +1,5 @@
 program yu;
-var x,y,z:integer;
-function ff(u:integer):integer;
-  var n: integer;
-  procedure gg(m:integer);
-      begin
-    write(m);
-    end;
-  begin
-   n :=23;
-   write(x);
-   gg(n); 
-  end;
+var x, y: integer;
 begin
-  x :=34;
-  ff(x);
+    y := x * 8;
 end.

@@ -1,111 +1,30 @@
 	1: reserved word: program
-	1: ID name=lu
+	1: ID name=yu
 	1: ;
 	2: reserved word: var
 	2: ID name=x
 	2: ,
 	2: ID name=y
-	2: ,
-	2: ID name=z
 	2: :
 	2: TYPE, name=integer
 	2: ;
-	4: reserved word: function
-	4: ID name=ff
-	4: (
-	4: ID name=u
-	4: :
-	4: TYPE, name=integer
-	4: )
-	4: :
-	4: TYPE, name=integer
+	3: reserved word: begin
+	4: ID name=y
+	4: Unknown token::=
+	4: ID name=x
+	4: *
+	4: INT, val=2
 	4: ;
-	5: reserved word: begin
-	7: reserved word: if
-	7: ID name=u
-	7: >>
-	7: INT, val=0
-	7: reserved word: then
-	8: reserved word: begin
-	9: writeln
-	9: (
-	9: ID name=u
-	9: )
-	9: ;
-	10: ID name=ff
-	10: Unknown token::=
-	10: ID name=ff
-	10: (
-	10: ID name=u
-	10: -
-	10: INT, val=1
-	10: )
-	10: +
-	10: ID name=u
-	10: ;
-	11: reserved word: end
-	11: ;
-	12: reserved word: end
-	12: ;
-	13: reserved word: begin
-	14: ID name=x
-	14: Unknown token::=
-	14: INT, val=5
-	14: ;
-	15: ID name=y
-	15: Unknown token::=
-	15: ID name=ff
-	15: (
-	15: ID name=x
-	15: )
-	15: ;
-	16: writeln
-	16: (
-	16: ID name=y
-	16: )
-	16: ;
-	17: reserved word: end
-	17: .
-	18: EOF
+	5: reserved word: end
+	5: .
+	6: EOF
     Routine Head
         Var Declare:
             Exp ID: x
             Exp ID: y
-            Exp ID: z
             type integer
-        Declare Function 
-            type integer
-            val parameters:
-                Exp ID: u
-                type integer
-            Routine Head
-            if
-                EXP op: >
-                    Exp ID: u
-                    const int:0
-                system procedure:writeln
-                    Exp ID: u
-                EXP op: Unknown token:
-                    Exp ID: ff
-                    EXP op: +
-                        Unknown Expression type
-                            EXP op: -
-                                Exp ID: u
-                                const int:1
-                        Exp ID: u
-    EXP op: Unknown token:
-        Exp ID: x
-        const int:5
     EXP op: Unknown token:
         Exp ID: y
-        Unknown Expression type
+        EXP op: *
             Exp ID: x
-    system procedure:writeln
-        Exp ID: y
-unknown node kind.
-unknown node kind.
-unknown node kind.
-unknown node kind.
-Function Name:ff            
-u               0         
-unknown node kind.
+            const int:2

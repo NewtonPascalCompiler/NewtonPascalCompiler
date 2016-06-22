@@ -1,16 +1,9 @@
 program yu;
-const aa = 5;
-type ii=integer;
-jj = array [5..10] of integer;
-var n,m :jj;
-x,y:ii; 
+
+type ARR = array [0..100] of integer;
+var n,m :ARR;
+i:integer;
 begin
- m[5]:= 0;
- m[6]:= 1;
- m[7]:= 28;
- m[8]:= 3;
- m[9]:= 4;
- m[10]:= 7;
- x := m[m[10]]+aa;
- writeln(x); 
+ 	for i := 0 to 100 do
+ 		m[i] := n[i];
 end.
