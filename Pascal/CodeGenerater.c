@@ -383,7 +383,10 @@ void GExpConstCode(TreeNode* pnode)
         CG_CODE(tmp);
 	}
 	else {
-        sprintf(tmp, "mov eax, %d\n", pnode->attr.val);
+        if (pnode->attr.val != 0)
+            sprintf(tmp, "mov eax, %d\n", pnode->attr.val);
+        else
+            sprintf(tmp, "xor eax, eax\n");
         CG_CODE(tmp);
         return;
     }
@@ -500,7 +503,10 @@ void GExpOpCode(TreeNode* pnode)
 		pnode->kind.exp = EXP_CONST;
 		pnode->attr.val = nn;
 		pnode->type = pnode->child[1]->type;
-		sprintf(tmp,"mov eax, %d\n",nn);
+        if (nn != 0)
+            sprintf(tmp,"mov eax, %d\n",nn);
+        else
+            sprintf(tmp, "xor eax, eax\n");
 		CG_CODE(tmp);
 		return;
 	}
@@ -595,32 +601,32 @@ void GExpOpCode(TreeNode* pnode)
 			break;
 		case TOKEN_LT:
 			strcat(code, "cmp eax, ebx\n");
-			strcat(code, "mov eax, 0\n");
+			strcat(code, "xor eax, eax\n");
 			strcat(code, "setl al\n");
 			break;
 		case TOKEN_LE:
 			strcat(code, "cmp eax, ebx\n");
-			strcat(code, "mov eax, 0\n");
+			strcat(code, "xor eax, eax\n");
 			strcat(code, "setng al\n");
 			break;
 		case TOKEN_GT:
 			strcat(code, "cmp eax, ebx\n");
-			strcat(code, "mov eax, 0\n");
+			strcat(code, "xor eax, eax\n");
 			strcat(code, "setg al\n");
 			break;
 		case TOKEN_GE:
 			strcat(code, "cmp eax, ebx\n");
-			strcat(code, "mov eax, 0\n");
+			strcat(code, "xor eax, eax\n");
 			strcat(code, "setnl eax\n");
 			break;
 		case TOKEN_EQUAL:
 			strcat(code, "cmp eax, ebx\n");
-			strcat(code, "mov eax, 0\n");
+			strcat(code, "xor eax, eax\n");
 			strcat(code, "sete al\n");
 			break;
 		case TOKEN_UNEQUAL:
 			strcat(code, "cmp eax, ebx\n");
-			strcat(code, "mov eax, 0\n");
+			strcat(code, "xor eax, eax\n");
 			strcat(code, "setne al\n");
 			break;
 		case TOKEN_ASSIGN:
@@ -673,7 +679,10 @@ void GExpCode(TreeNode *pnode, int isrightvalue)
 		//if the ID is a const
 		item = CT_lookup(pnode->attr.name);
 		if(item!=NULL){
-            sprintf(tmp, ";the ID is const\n mov eax, %d\n",item->val.int_val);
+            if (item->val.int_val != 0)
+                sprintf(tmp, ";the ID is const\n mov eax, %d\n",item->val.int_val);
+            else
+                sprintf(tmp, ";the ID is const\n xor eax, eax\n");
             CG_CODE(tmp);
             pnode->type = item->type;
 		}
