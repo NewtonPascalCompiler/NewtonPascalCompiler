@@ -55,11 +55,22 @@ input_real:
    invoke crt_scanf, addr szInput_real, addr tmp
    fld dword ptr tmp
    ret
+
 yu:
 push ebp
 mov ebp, esp
 mov esi, ss:[ebp+0]
 sub esp, 8		;Allocate Varable space
+
+mov edi, -4
+mov eax, ss:[ebp+edi] 
+push eax
+mov eax, 2
+mov ebx, eax
+pop eax
+mov edi, -4
+mov eax, ebx
+mov ss:[ebp+edi], eax
 
 mov edi, -8
 mov eax, ss:[ebp+edi] 
@@ -67,16 +78,22 @@ push eax
 mov edi, -4
 mov eax, ss:[ebp+edi] 
 push eax
-mov eax, 2
+mov eax, 4
 mov ebx, eax
 pop eax
-xor edx, edx
-mul ebx
+and eax, 3
 mov ebx, eax
 pop eax
 mov edi, -8
 mov eax, ebx
 mov ss:[ebp+edi], eax
+
+mov edi, -8
+mov eax, ss:[ebp+edi] 
+push eax
+call output
+pop  eax
+
 
 add esp, 8
 pop ebp

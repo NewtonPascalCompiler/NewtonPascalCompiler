@@ -29,24 +29,6 @@ extern FILE* listing;
 
 extern int lineno;
 
-/*
-typedef enum{
-    // book-keeping
-    ENDFILE,ERROR,
-    //reserved
-    TOKEN_PROGRAM,
-    //
-    TOKEN_CONST,TOKEN_TYPE,TOKEN_VAR,
-    //reserved
-    IF,THEN,
-    //special symbol
-    EQUAL,TOKEN_PLUS,OR,LB,RB,SEMI,SPLIT,DOT,LP,RP,COMMA,COLON,
-    //type
-    INT,BOOL,TRUE,FALSE,ARRAY,OF,
-    //multicharacter tokens
-    ID,TOKEN_INT,TOKEN_REAL,TOKEN_CHAR,TOKEN_STRING
-}TokenType;
-*/
 
 typedef enum{
     NODE_STATEMENT, NODE_EXPRESSION, NODE_DECLARE, NODE_TYPE

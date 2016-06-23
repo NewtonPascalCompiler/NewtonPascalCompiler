@@ -2266,7 +2266,7 @@ TokenType getToken()
     strncpy(tokenString,yytext,MAXTOKENLEN);
     if(TraceScan){
         fprintf(listing,"\t%d: ",lineno);
-        printToken(currentToken,tokenString);
+        //printToken(currentToken,tokenString);
     }
     return currentToken;
 }

@@ -1,30 +1,53 @@
 	1: reserved word: program
 	1: ID name=yu
 	1: ;
-	2: reserved word: var
-	2: ID name=x
-	2: ,
-	2: ID name=y
-	2: :
+	2: reserved word: type
+	2: ID name=ii
+	2: ==
 	2: TYPE, name=integer
 	2: ;
-	3: reserved word: begin
-	4: ID name=y
-	4: Unknown token::=
-	4: ID name=x
-	4: *
-	4: INT, val=2
-	4: ;
-	5: reserved word: end
-	5: .
-	6: EOF
+	3: reserved word: var
+	3: ID name=x
+	3: ,
+	3: ID name=y
+	3: :
+	3: ID name=ii
+	3: ;
+	4: reserved word: begin
+	5: ID name=x
+	5: Unknown token::=
+	5: INT, val=2
+	5: ;
+	7: ID name=y
+	7: Unknown token::=
+	7: ID name=x
+	7: mod
+	7: INT, val=4
+	7: ;
+	8: writeln
+	8: (
+	8: ID name=y
+	8: )
+	8: ;
+	9: reserved word: end
+	9: .
+	9: EOF
     Routine Head
+        Type Declare:
+            Exp ID: ii
+            type integer
         Var Declare:
             Exp ID: x
             Exp ID: y
-            type integer
+            type id
+    EXP op: Unknown token:
+        Exp ID: x
+        const int:2
     EXP op: Unknown token:
         Exp ID: y
-        EXP op: *
+        EXP op: mod
             Exp ID: x
-            const int:2
+            const int:4
+    system procedure:writeln
+        Exp ID: y
+unknown node kind.

@@ -14,7 +14,7 @@ static TreeNode* savedTree;
 static int savedNum;
 static int level=0;
 extern int yylineno;
-//extern int yylex();
+extern int err_flag;
 extern char * yytext;
 static int yylex(){
     return getToken();
@@ -82,6 +82,10 @@ routine_part        :
                     |   function_decl   {$$=$1;}
                     |   procedure_decl  {$$=$1;}
                     ;
+
+
+function_decl       : error  TOKEN_SEMI {yyerror("grammar error.");}
+
 function_decl       :   function_head TOKEN_SEMI routine TOKEN_SEMI
                         {
                             $$=newDeclNode(DECL_FUNCTION);
@@ -505,6 +509,8 @@ case_expr           :   const_value TOKEN_COLON stmt TOKEN_SEMI
                             $$->child[0]=$1;
                             $$->child[1]=$3;
                         };
+
+
 for_stmt            :   TOKEN_FOR ID TOKEN_ASSIGN expression TOKEN_TO expression TOKEN_DO stmt
                         {
                             $$=newStmtNode(STMT_FOR);
@@ -626,6 +632,7 @@ void yyerror(const char* s, ...){
     vfprintf(stderr, s, ap);
     fprintf(stderr, "\n");
     va_end(ap);
+    err_flag = 1;
 }
 
 

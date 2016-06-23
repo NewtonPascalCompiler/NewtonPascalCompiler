@@ -22,7 +22,6 @@ void getOffset(TreeNode* pnode) //generate
 	int offset = tt.offset;
 	int paramCnt = tt.paramCnt;
 	int num1 = tt.num1;
-	int num2 = tt.num2;
 	
 	if(offset/4 <paramCnt)
 		re = offset+8; 
@@ -341,12 +340,14 @@ int pushParam(TreeNode* pnode)
 	CG_CODE(";function parameter end\n");
 	return cnt;
 }
-void GExpCallCode(TreeNode *pnode)
+
+
 /**
  * Generate Code for Calling a Function
  * Pass the parameters by stack.
  * Push from right to left.
-**/
+ **/
+void GExpCallCode(TreeNode *pnode)
 {
 	char tmp[1024];
 	int cnt  = 0, i;
@@ -364,11 +365,13 @@ void GExpCallCode(TreeNode *pnode)
 	for(i=0; i<cnt; i++) CG_CODE("pop ebx\t\t;pop parameter in order to banlance the stack\n");
 	return;
 }
-void GExpConstCode(TreeNode* pnode)
+
+
 /**
  * Generate Code for a const number use in code.
  * We simple move it to eax register.
-**/
+ **/
+void GExpConstCode(TreeNode* pnode)
 {
 	char tmp[1024];
 	char tmp2[1024];
@@ -400,12 +403,9 @@ void GExpOpCode_real(TreeNode* pnode){
 		GExpCode(pnode->child[1],1);
 
 
-/*	if(pnode->child[0]==NULL || pnode->child[1]==NULL||pnode->child[0]->type!=EXPTYPE_REAL||pnode->child[1]->type!=EXPTYPE_REAL){
-        printf("error %d(%d): The two operator's type are not both real\n", ++err_cnt, pnode->lineno);
-	}
-	else {*/
+
         pnode->type = pnode->child[1]->type;
-        //printf("in op_real, %d   %d\n",pnode->type,pnode->child[1]->type);
+        //printf("in real, %d   %d\n",pnode->type,pnode->child[1]->type);
 		switch(pnode->attr.op)
 		{
 		case TOKEN_PLUS:
@@ -504,7 +504,7 @@ void GExpOpCode(TreeNode* pnode)
 		CG_CODE(tmp);
 		return;
 	}
-	////
+	
 	if(pnode->child[0]!=NULL)
 		GExpCode(pnode->child[0],0);
 	CG_CODE("push eax\n");
@@ -514,12 +514,6 @@ void GExpOpCode(TreeNode* pnode)
 	CG_CODE("pop eax\n");
 	strcpy(code, "");
 
-
-/*	if(pnode->child[0]==NULL || pnode->child[1]==NULL||(pnode->child[0]->type!= pnode->child[1]->type)){
-        printf("error %d(%d): The two operator's type are not the same\n", ++err_cnt, pnode->lineno);
-	}*/
-//	else {
- //       pnode->type = pnode->child[1]->type;
 		switch(pnode->attr.op)
 		{
 		case TOKEN_PLUS:
@@ -643,7 +637,7 @@ void GExpOpCode(TreeNode* pnode)
 		default:
 			break;
 		}
-//	}
+
 	CG_CODE(code);
 	return;
 }
@@ -744,6 +738,8 @@ void GParamCode(TreeNode* pnode)
 	paramCnt++;
 	return;
 }
+
+
 void GDeclCode(TreeNode* pnode)
 {
 	int i;
@@ -934,6 +930,8 @@ void GenerateCodeHead(char* pname)
 	CG_CODE("   ret\n");
 
 }
+
+
 void GenerateCodeTail()
 {
 	char tmp[200];
@@ -943,6 +941,9 @@ void GenerateCodeTail()
 	CG_CODE("ret\n");
 	CG_CODE("end    start\n");
 }
+
+
+
 int BuildCode(TreeNode* pnode)
 {
 	sprintf(CodeHeadBuffer,"");

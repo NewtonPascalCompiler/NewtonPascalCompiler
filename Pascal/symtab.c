@@ -212,12 +212,12 @@ void st_leave(TreeNode * node)
 	}
 }
 
-void st_insertdecl_var_list(TreeNode* node){
-      //  st_execute(node->child[1],node->child[1]->lineno);//计算pnode的类型
+void st_insertdecl_var_list(TreeNode* node)
+{
         node ->child[0]->type = node->child[1]->type;
         TreeNode* tmp;
-        //把多个变量插入符号表
-        if(node->child[1]->type==EXPTYPE_INT||node->child[1]->type==EXPTYPE_REAL){ //如果是简单类型，用namelist节点插入
+    
+        if(node->child[1]->type==EXPTYPE_INT||node->child[1]->type==EXPTYPE_REAL){
             tmp = node->child[0];
             while(tmp!=NULL){
                 if(st_local_lookup(currentSymTab, tmp->attr.name).offset!=-1)
@@ -428,27 +428,6 @@ st_varInfo st_execute(TreeNode * node, int lineno)
 	return ml;
 }
 
-/*void traverse(TreeNode * t,
-		st_varInfo (* preProc) (TreeNode *, int),
-		void (* postProc) (TreeNode *))
-{
-	if(t!=NULL)
-	{
-		preProc(t, t->lineno);
-		{
-			int i;
-			for(i=0; i<MAXCHILDREN; i++)
-				traverse(t->child[i], preProc, postProc);
-		}
-		postProc(t);
-		traverse(t->sibling, preProc, postProc);
-	}
-}
-
-void buildSymTab(TreeNode * node)
-{
-	traverse (node, st_execute, st_leave);
-}*/
 
 void printSymTab()
 {
@@ -460,6 +439,7 @@ void printSymTab()
 		printHashList( topHashTable[i] );
 	}
 }
+
 void CT_insert(ConstValueItem item){
     ConstValueTable[ConstValueNum++] = item;
 }
@@ -487,3 +467,8 @@ TypeItem TT_lookup(char* name){
     }
     return NULL;
 }
+
+
+
+
+

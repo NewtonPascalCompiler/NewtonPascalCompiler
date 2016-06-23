@@ -217,7 +217,7 @@ static TreeNode* savedTree;
 static int savedNum;
 static int level=0;
 extern int yylineno;
-//extern int yylex();
+extern int err_flag;
 extern char * yytext;
 static int yylex(){
     return getToken();
@@ -2945,6 +2945,7 @@ void yyerror(const char* s, ...){
     vfprintf(stderr, s, ap);
     fprintf(stderr, "\n");
     va_end(ap);
+    err_flag = 1;
 }
 
 

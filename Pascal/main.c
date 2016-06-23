@@ -4,19 +4,26 @@
 #include "parse.h"
 #include "CodeGenerater.h"
 
-char filename[30] = "system_test.p";
+char filename[30] = "test.pas";
 FILE * source ;
 FILE * listing ;
 int TraceScan = True;
-int lineno=0;
-void print_help(void);
+int lineno = 0;
+
+void help(void)
+{
+    printf("The Usage: compiler pascal_source_filename [assemble_filename]\n");
+}
+
+//
+int err_flag = 0;
 
 int main(int argc, char **argv)
 {
-	TreeNode* syntaxTree;
+	TreeNode* syntax_tree;
 	//char* outputfile;
 	if(argc < 2) {
-		print_help();
+		help();
 		exit(1);
 	}
     source = fopen(argv[1], "r");
@@ -27,8 +34,9 @@ int main(int argc, char **argv)
         return 1;
     }
     
+    //for debug
     listing = fopen("tmp.list", "w+");
-    // listing = stdout;
+    
 	if(argc == 3){
 		InitialGenerater(argv[2]);
 	}
@@ -36,20 +44,15 @@ int main(int argc, char **argv)
 		InitialGenerater("out.asm");
 	}
    
-    syntaxTree = parse();
+    syntax_tree = parse();
     
-    printTree(syntaxTree);
-    
-    if (syntaxTree == NULL) {
-        printf("由于前面的错误，编译无法进行。\n");
+    if (syntax_tree == NULL || err_flag == 1) {
+        printf("compile error.\n");
         return 1;
     }
     
-    //printf("Begin Coding: \n");
-    BuildCode(syntaxTree);
-    // printf("The SymTab is :\n");
-    // printSymTab();
-	//printf("End Coding: \n");
+    //code generation
+    BuildCode(syntax_tree);
 
 	fclose(listing);
 	
@@ -59,9 +62,5 @@ int main(int argc, char **argv)
 
 
 
-void print_help(void)
-{
-	printf("The Usage:\n");
-	printf("compiler pascal_source_filename [assemble_filename]\n");
-}
+
 
